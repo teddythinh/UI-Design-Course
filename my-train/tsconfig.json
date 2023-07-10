@@ -10,6 +10,7 @@
     ],
     "removeComments": true,
     "allowJs": true,
+    "baseUrl": "./",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -19,6 +20,12 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "paths": {
+      "components/*": [
+        "src/components/*"
+      ]
+    },
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
