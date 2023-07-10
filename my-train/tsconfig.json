@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": false,
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "removeComments": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,6 +24,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "./webpack.config.ts"
   ]
 }
