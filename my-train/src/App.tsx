@@ -1,9 +1,19 @@
 import React from "react";
-import HelloWorld from "./components/HelloWorld";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
+import List from "./pages/list/List";
 
 const App: React.FC = () => {
   return (
-    <HelloWorld />
+    <Router>
+      <>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/hotels" element={<List />} />
+        </Routes>
+      </>
+    </Router>
+
   )
 }
 
