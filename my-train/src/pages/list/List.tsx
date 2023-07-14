@@ -1,8 +1,10 @@
+import Header from "../../components/header/Header";
+import NavBar from "../../components/navbar/NavBar";
 import React from "react";
 
 const List: React.FC = () => (
     <>
-        <h1>List Hotel</h1>
+        <div><NavBar/><Header type="list"/></div>
     </>
 )
 
