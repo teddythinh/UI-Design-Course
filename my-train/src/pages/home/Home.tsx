@@ -1,8 +1,21 @@
+import Featured from "../../components/featured/Featured";
+import Header from "../../components/header/Header";
+import NavBar from "../../components/navbar/NavBar";
+import MailList from "../../components/mail/MailList";
+import Footer from "../../components/footer/Footer";
+
 import React from "react";
+import "./home.css"
 
 const Home: React.FC = () => (
     <>
-        <h1>Welcome Home</h1>
+        <NavBar />
+        <Header type="" />
+        <div className="homeContainer">
+            <Featured />
+        </div>
+        <MailList />
+        <Footer />
     </>
 )
 
