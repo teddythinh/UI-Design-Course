@@ -1,13 +1,13 @@
 import path from "path";
-import webpack, {Configuration} from "webpack";
+import webpack, { Configuration } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import {TsconfigPathsPlugin} from "tsconfig-paths-webpack-plugin";
+import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
 import * as webpackDevServer from "webpack-dev-server";
 
 const webpackConfig = (env): Configuration => ({
     entry: "./src/index.tsx",
-    ...(env.production || !env.development ? {} : {devtool: "eval-source-map"}),
+    ...(env.production || !env.development ? {} : { devtool: "eval-source-map" }),
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
         //TODO waiting on https://github.com/dividab/tsconfig-paths-webpack-plugin/issues/61
@@ -22,11 +22,26 @@ const webpackConfig = (env): Configuration => ({
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: "ts-loader",
-                options: {
-                    transpileOnly: true
-                },
-                exclude: /dist/
+                use: [
+                    { loader: "ts-loader" },
+                    { loader: "babel-loader" },
+                    {
+                        options: {
+                            // transpileOnly: true,
+                            presets: ['@babel/preset-env'],
+                        }
+                    },
+                ],
+                exclude: /dist/,
+            },
+            {
+                use: [{
+                    loader: 'style-loader',
+                  }, {
+                    loader: 'css-loader',
+                  }, {
+                     loader: 'sass-loader'
+                  }],
             }
         ]
     },
