@@ -1,21 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer } from '@react-navigation/native';
-import { ThemeProvider } from '@rneui/themed';
-
-import HomeScreen from './screens/HomeScreen';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <ThemeProvider>
-        <NavigationContainer>
-          <HomeScreen />
-          <StatusBar style="auto" />
-        </NavigationContainer>
-      </ThemeProvider>
-    </SafeAreaProvider>
-  )
+    <View style={styles.container}>
+      <Text>Open up App.tsx to start working on your app!</Text>
+    </View>
+  );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
