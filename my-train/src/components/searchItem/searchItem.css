@@ -1,0 +1,106 @@
+.searchItem {
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.searchImg {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.searchImgDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 2;
+}
+
+.searchImgTitle {
+    font-size: 20px; 
+    color: #0071C2;
+}
+
+.searchImgLocation {
+    font-size: 12px;
+}
+
+.searchImgtTaxiOpt {
+    font-size: 15px;
+    background-color: #008009;
+    color: white;
+    width: max-content;
+    padding: 3px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.searchImgSubtitle {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.searchImgFeatures {
+    font-size: 12px;
+}
+
+.searchImgCancelOpt {
+    font-size: 12px;
+    color: #008009;
+    font-weight: bold;
+}
+
+.searchImgDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.searchImgRating {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.searchImgRating>span {
+    font-weight: 500;
+}
+
+.searchImgRating>button {
+    background-color: #003580;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    border: none;
+}
+
+.searchImgDetailTexts {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.searchImgPrice {
+    font-size: 24px;
+    color: #0071C2;
+    font-weight: bold;
+}
+
+.searchImgTaxOpt {
+    font-size: 12px;
+    color: gray;
+}
+
+.searchImgCheckBtn {
+    font-weight: bold;
+    padding: 10px 5px;
+    cursor: pointer;
+}

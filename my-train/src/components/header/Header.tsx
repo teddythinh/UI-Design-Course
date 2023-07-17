@@ -15,12 +15,13 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import {format} from "date-fns";
 import Button from "@mui/material/Button";
 import Input from "@mui/material/Input";
+import {useNavigate} from "react-router-dom";
 
 interface DateType {
     startDate: Date;
     endDate: Date;
     key: string;
-};
+}
 
 interface OptionsType {
     adult: number;
@@ -29,7 +30,11 @@ interface OptionsType {
 }
 
 interface HeaderProps {
-    type: string
+    type: string;
+}
+
+interface DestinationType {
+    destination: string;
 }
 
 const Header: FC<HeaderProps> = ({type}) => {
@@ -49,6 +54,13 @@ const Header: FC<HeaderProps> = ({type}) => {
             room: 0
         }
     ]);
+    const [destination, setDestination] = useState<DestinationType[]>([
+        {
+            destination: ""
+        }
+    ]);
+
+    const navigate = useNavigate();
 
     const handleOption = (name: string, operation: string): void => {
         setOptions((prev) => {
@@ -57,6 +69,10 @@ const Header: FC<HeaderProps> = ({type}) => {
                 [name]: operation === "i" ? options[name] + 1 : options[name] - 1
             };
         });
+    };
+
+    const handleSearch = (): void => {
+        navigate("/hotels", {state: {destination, date, options}});
     };
 
     return (
@@ -86,14 +102,20 @@ const Header: FC<HeaderProps> = ({type}) => {
                             Welcome to MyTrain. Where you can customize everything to your trip!
                         </h1>
                         <p className="headerDescription">Get rewarded with your travels 💖</p>
-                        <Button variant="contained" className="headerButton">Sign in / Register</Button>
+                        <Button variant="contained" className="headerButton">
+                            Sign in / Register
+                        </Button>
                         <div className="headerSearch">
                             <div className="headerSearchItem">
                                 <FontAwesomeIcon icon={faPlane} className="headerIcon" />
-                                <Input type="text"
+                                <Input
+                                    type="text"
                                     placeholder="Where are you going?"
                                     className="headerSearchInput"
-                                     />
+                                    onChange={(e) =>
+                                        setDestination([{destination: e.target.value}])
+                                    }
+                                />
                             </div>
 
                             <div className="headerSearchItem">
@@ -112,6 +134,7 @@ const Header: FC<HeaderProps> = ({type}) => {
                                         moveRangeOnFirstSelection={false}
                                         ranges={date}
                                         className="date"
+                                        minDate={new Date()}
                                     />
                                 )}
                             </div>
@@ -195,7 +218,14 @@ const Header: FC<HeaderProps> = ({type}) => {
                             </div>
 
                             <div className="headerSearchItem">
-                                <Button variant="contained" color="warning" className="headerButton">Search</Button>
+                                <Button
+                                    variant="contained"
+                                    color="warning"
+                                    className="headerButton"
+                                    onClick={handleSearch}
+                                >
+                                    Search
+                                </Button>
                             </div>
                         </div>
                     </>
