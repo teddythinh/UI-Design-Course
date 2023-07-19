@@ -20,13 +20,8 @@ const styles = StyleSheet.create({
       overflow: "hidden",
     },
     inputText: {
-      height: 40,
-      margin: 12,
-      width: 250,
-      borderWidth: 1,
-      padding: 10,
-      borderRadius: 10,
-      marginTop: 20,
+      margin: 10,
+      width: 280,
     },
     textInImage: {
       // position: "absolute",
