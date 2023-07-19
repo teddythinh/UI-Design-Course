@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'  
 
-const SettingsScreen: React.FC = () => {
+const AccountScreen: React.FC = () => {
   return (
     <View>
         <Text>SettingsScreen</Text>
@@ -9,4 +9,4 @@ const SettingsScreen: React.FC = () => {
   )
 }
 
-export default SettingsScreen
+export default AccountScreen

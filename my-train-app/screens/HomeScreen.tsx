@@ -1,6 +1,5 @@
 import React, { createRef, useState, useRef } from "react";
 import {
-  StyleSheet,
   View,
   TextInput,
   ImageBackground,
@@ -12,6 +11,8 @@ import { Image, Text, Input, Button } from "@rneui/themed";
 //import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import cities from "../assets/cities";
 import styles from "../stylesheet/styles";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const URI =
   "https://lp-cms-production.imgix.net/2021-01/shutterstockRF_718619590.jpg";
@@ -19,8 +20,12 @@ const URI =
 const URI2 =
   "https://bcp.cdnchinhphu.vn/Uploaded/phanthuytrang/2020_09_29/IMG_5815.JPG";
 
+interface HomeScreenProps {
+  navigation: any;
+}
+
 // TODO: Add carousel
-const HomeScreen: React.FC = () => {
+const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
   const [text, onChangeText] = useState("");
 
   return (
@@ -53,18 +58,23 @@ const HomeScreen: React.FC = () => {
               }}
             />
           </ImageBackground>
-          <FlatList
-            data={cities}
-            //style={styles.list}
-            renderItem={({ item }) => (
-              <Image
-                source={{ uri: item.imgUrl }}
-                style={styles.URI2}
-                // containerStyle={styles.item}
-                PlaceholderContent={<ActivityIndicator />}
-              />
-            )}
-          />
+
+          <Text>Những tỉnh thành nổi tiếng</Text>
+
+            <FlatList
+              data={cities}
+              //style={styles.list}
+              renderItem={({ item }) => (
+                <Image
+                  source={{ uri: item.imgUrl }}
+                  style={styles.URI2}
+                  // containerStyle={styles.item}
+                  // PlaceholderContent={<ActivityIndicator />}
+                  // onPress={() => navigation.navigate('CityDetailsScreen', {item: item})}
+                />
+              )}
+              scrollEnabled={false}
+            />
         </View>
       </ScrollView>
     </>
