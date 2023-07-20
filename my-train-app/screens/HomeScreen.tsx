@@ -12,29 +12,27 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AutocompleteSimpleUsageShowcase } from "../components/AutoComplete";
-import dayjs from 'dayjs';
-import isLeapYear from 'dayjs/plugin/isLeapYear' 
-import 'dayjs/locale/vi' 
-import Icon from "react-native-vector-icons/FontAwesome";
+import dayjs from "dayjs";
+import isLeapYear from "dayjs/plugin/isLeapYear";
+import "dayjs/locale/vi";
 
 import cities from "../assets/cities";
 import styles from "../stylesheet/styles";
 
-dayjs.extend(isLeapYear)
-dayjs.locale('vi')
+dayjs.extend(isLeapYear);
+dayjs.locale("vi");
 
 const URI =
   "https://lp-cms-production.imgix.net/2021-01/shutterstockRF_718619590.jpg";
 
 const URI2 =
   "https://bcp.cdnchinhphu.vn/Uploaded/phanthuytrang/2020_09_29/IMG_5815.JPG";
-  
 
 interface HomeScreenProps {
   navigation: any;
 }
 
-const filter = (item, query): boolean =>
+const filter = ({ item, query }: any): boolean =>
   item.title.toLowerCase().includes(query.toLowerCase());
 
 // TODO: Add carousel
@@ -43,7 +41,9 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
   const [date, setDate] = useState(dayjs());
 
   useEffect(() => {
-    const timer = setInterval(() => {setDate(dayjs());}, 1000 * 1); // 1 second = 1000 milliseconds
+    const timer = setInterval(() => {
+      setDate(dayjs());
+    }, 1000 * 1); // 1 second = 1000 milliseconds
     return () => clearInterval(timer);
   }, []);
 
@@ -53,8 +53,12 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
         <ScrollView>
           <View style={styles.container}>
             <Image source={{ uri: URI }} style={styles.URI} />
-            <Text style={{margin: 5, fontSize: 20}}>{date.format("dddd, DD MMMM")}</Text>
-            <Text style={{margin: 5, fontSize: 20}}>{date.format("HH:mm:ss")}</Text>
+            <Text style={{ margin: 5, fontSize: 20 }}>
+              {date.format("dddd, DD MMMM")}
+            </Text>
+            <Text style={{ margin: 5, fontSize: 20 }}>
+              {date.format("HH:mm:ss")}
+            </Text>
             {/* <Input
               placeholder="BẠN MUỐN ĐI ĐÂU?"
               ref={input}
