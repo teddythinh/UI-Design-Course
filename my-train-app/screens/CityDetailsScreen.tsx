@@ -1,19 +1,27 @@
 import React from "react";
-import { View, Text, SafeAreaView } from "react-native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { View, Text, SafeAreaView, StyleSheet } from "react-native";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 
-const Stack = createNativeStackNavigator();
 
 const CityDetailsScreen: React.FC = () => {
   return (
     <>
-      <SafeAreaView>
-        <View>
-          <Text>CityDetailsScreen</Text>
+        <View style={styles.container}>
+          {/* <MapView style={styles.map} provider={PROVIDER_GOOGLE} /> */}
+          <MapView style={styles.map} provider={PROVIDER_GOOGLE} />
         </View>
-      </SafeAreaView>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  map: {
+    width: "100%",
+    height: "100%",
+  },
+});
 
 export default CityDetailsScreen;

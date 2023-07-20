@@ -1,0 +1,12 @@
+{
+    "expo": {
+        "name": "my-train-app",
+        "slug": "my-train-app",
+        "ios": {
+            "bundleIdentifier": "com.example.my-train",
+            "config": {
+                "googleMapsApiKey": "AIzaSyCIuGWq3EGx_QTawb8q8S4iMdD1EgekCLI"   
+            }
+        },
+    }
+}
