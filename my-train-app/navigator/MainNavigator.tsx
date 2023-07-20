@@ -12,7 +12,7 @@ const MainNavigator: React.FC = () => {
     <>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
+          name="Main"
           component={TabNavigator}
           options={{ headerShown: false }}
         />

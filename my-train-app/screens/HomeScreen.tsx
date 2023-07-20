@@ -8,9 +8,6 @@ import {
 } from "react-native";
 import { Image, Text, Button, Tile } from "@rneui/themed";
 import { Input } from "@ui-kitten/components/ui";
-//import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import cities from "../assets/cities";
-import styles from "../stylesheet/styles";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -18,8 +15,12 @@ import { AutocompleteSimpleUsageShowcase } from "../components/AutoComplete";
 import dayjs from 'dayjs';
 import isLeapYear from 'dayjs/plugin/isLeapYear' 
 import 'dayjs/locale/vi' 
+import Icon from "react-native-vector-icons/FontAwesome";
 
-dayjs.extend(isLeapYear) // use plugin
+import cities from "../assets/cities";
+import styles from "../stylesheet/styles";
+
+dayjs.extend(isLeapYear)
 dayjs.locale('vi')
 
 const URI =
@@ -27,6 +28,7 @@ const URI =
 
 const URI2 =
   "https://bcp.cdnchinhphu.vn/Uploaded/phanthuytrang/2020_09_29/IMG_5815.JPG";
+  
 
 interface HomeScreenProps {
   navigation: any;
