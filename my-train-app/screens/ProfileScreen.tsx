@@ -18,15 +18,11 @@ type AvatarProps = {};
 const ProfileScreen: React.FC<AvatarProps> = () => {
   return (
     <>
-    <SafeAreaView>
-<View style={styles.container}>
-        <Avatar
-          source={{ uri: avatars[0].img_url }}
-          size="giant"
-        />
-      </View>
-    </SafeAreaView>
-      
+      <SafeAreaView>
+        <View style={styles.container}>
+          <Avatar source={{ uri: avatars[0].img_url }} size="giant" />
+        </View>
+      </SafeAreaView>
     </>
   );
 };
@@ -38,7 +34,7 @@ const styles = StyleSheet.create({
   },
   avatar: {
     marginTop: 50,
-  }
+  },
 });
 
 export default ProfileScreen;
