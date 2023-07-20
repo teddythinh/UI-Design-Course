@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
       alignItems: "center",
     },
     URI: {
-      width: 300,
+      width: 350,
       height: 200,
       borderRadius: 10,
       marginTop: 20,
