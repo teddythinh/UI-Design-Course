@@ -2,8 +2,8 @@ import React from "react";
 import { Text, SafeAreaView } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Image } from "@rneui/themed";
-import HomeScreen from "../screens/HomeScreen";
 import TabNavigator from "./TabNavigator";
+import CreateTripScreen from "../screens/CreateTripScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +16,7 @@ const MainNavigator: React.FC = () => {
           component={TabNavigator}
           options={{ headerShown: false }}
         />
+        <Stack.Screen name="CreateTrip" component={CreateTripScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </>
   );

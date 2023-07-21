@@ -85,6 +85,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
                   marginHorizontal: 10,
                   marginVertical: 10,
                 }}
+                onPress={() => navigation.navigate("CreateTrip")}
               />
             </ImageBackground>
 
