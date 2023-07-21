@@ -5,7 +5,6 @@ import {
   TabBar,
   Tab,
   Icon,
-  IconElement,
   TabBarProps,
 } from "@ui-kitten/components";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -29,15 +28,15 @@ const TopTabBar = ({ navigation, state }) => (
     selectedIndex={state.index}
     onSelect={(index) => navigation.navigate(state.routeNames[index])}
   >
-    <Tab title="UPCOMING" icon={UpcomingIcon} />
     <Tab title="HISTORY" icon={HistoryIcon} />
+    <Tab title="UPCOMING" icon={UpcomingIcon} />
   </TabBar>
 );
 
 const TabNavigator = () => (
   <Navigator tabBar={(props) => <TopTabBar {...props} />}>
-    <Screen name="Upcoming" component={UpComingScreen} />
     <Screen name="SubHistory" component={HistorySubScreen} />
+    <Screen name="Upcoming" component={UpComingScreen} />
   </Navigator>
 );
 
