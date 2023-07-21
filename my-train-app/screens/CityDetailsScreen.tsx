@@ -1,15 +1,25 @@
-import React from "react";
-import { View, Text, SafeAreaView, StyleSheet } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, SafeAreaView, StyleSheet, Platform } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 
+// iOS permissions
+// PERMISSIONS.IOS.LOCATION_ALWAYS;
+// PERMISSIONS.IOS.LOCATION_WHEN_IN_USE;
 
 const CityDetailsScreen: React.FC = () => {
+
   return (
     <>
-        <View style={styles.container}>
-          {/* <MapView style={styles.map} provider={PROVIDER_GOOGLE} /> */}
-          <MapView style={styles.map} provider={PROVIDER_GOOGLE} />
-        </View>
+      <View style={styles.container}>
+        {/* Apple Maps for iOS and Google Maps for Android */}
+        <MapView
+          style={styles.map}
+          provider="google"
+          showsUserLocation={true}
+          showsCompass={true}
+          showsMyLocationButton={true}
+        />
+      </View>
     </>
   );
 };

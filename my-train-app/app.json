@@ -6,7 +6,23 @@
             "bundleIdentifier": "com.example.my-train",
             "config": {
                 "googleMapsApiKey": "AIzaSyCIuGWq3EGx_QTawb8q8S4iMdD1EgekCLI"   
+            },
+            "infoPlist": {
+                "NSLocationWhenInUseUsageDescription": "This app needs access to location when open.",
+                "NSLocationAlwaysAndWhenInUseUsageDescription": "This app needs access to location when in the background."
             }
-        }
+        },
+        "plugins": [
+            [
+                "expo-location",
+                {
+                    "locationAlwaysAndWhenInUsePermission": "Allow $(my-train) to use your location.",
+                    "locationWhenInUsePermission": "Allow $(my-train) to use your location.",
+                    "locationAlwaysPermission": "Allow $(my-train) to use your location.",
+                    "isIosBackgroundLocationEnabled": true,
+                    "isAndroidBackgroundLocationEnabled": true
+                }
+            ]
+        ]
     }
 }
