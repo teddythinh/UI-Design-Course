@@ -11,7 +11,7 @@ import { Input } from "@ui-kitten/components/ui";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { AutocompleteSimpleUsageShowcase } from "../components/AutoComplete";
+import { AutocompleteCities } from "../components/AutoCompleteCities";
 import dayjs from "dayjs";
 import isLeapYear from "dayjs/plugin/isLeapYear";
 import "dayjs/locale/vi";
@@ -59,20 +59,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
             <Text style={{ margin: 5, fontSize: 20 }}>
               {date.format("HH:mm:ss")}
             </Text>
-            {/* <Input
-              placeholder="BẠN MUỐN ĐI ĐÂU?"
-              ref={input}
-              rightIcon={{ name: "search"}}
-              style={styles.inputText}
-              inputContainerStyle={{ borderBottomWidth: 0, width: 300 }}
-            /> */}
-            {/* <Input
-              placeholder="BẠN MUỐN ĐI ĐÂU?"
-              style={styles.inputText}
-              onChangeText={onChangeText}
-              value={text}
-            /> */}
-            <AutocompleteSimpleUsageShowcase />
+            <AutocompleteCities />
             <Text style={{ margin: 10 }}>
               Bạn muốn đặt phương tiện di chuyển?
             </Text>
@@ -85,7 +72,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
                   marginHorizontal: 10,
                   marginVertical: 10,
                 }}
-                onPress={() => navigation.navigate("CreateTrip")}
+                onPress={() => navigation.navigate("TrainBooking")}
               />
             </ImageBackground>
 
