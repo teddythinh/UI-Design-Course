@@ -6,23 +6,54 @@ import {
   TouchableHighlight,
 } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Image, Button } from "@rneui/themed";
+import { Image } from "@rneui/themed";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { Text, Input, CheckBox } from "@ui-kitten/components";
+import {
+  Text,
+  Input,
+  CheckBox,
+  IndexPath,
+  Select,
+  SelectItem,
+  Button,
+  Icon,
+  IconElement,
+} from "@ui-kitten/components";
 
 import HomeScreen from "./HomeScreen";
 import AutocompleteTrainStation from "../components/AutoCompleteTrainStation";
 import DepartureDatepicker from "../components/DepartureDatePicker";
 import ArrivalDatepicker from "../components/ArrivalDatePicker";
 
-interface HomeScreenProps {
+interface BookingScreenProps {
   navigation: any;
 }
 
-const TrainbookingScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
+const data = [
+  "Người lớn",
+  "Trẻ em (1-10 tuổi)",
+  "Sinh viên",
+  "Người cao tuổi (từ 60 tuổi)",
+];
+
+const searchIcon = (props): IconElement => (
+  <Icon {...props} name="search-outline" />
+);
+
+const TrainbookingScreen: React.FC<BookingScreenProps> = ({ navigation }) => {
   const [value, setValue] = useState("");
   const [checked, setChecked] = useState(false);
+
+  const [selectedIndex, setSelectedIndex] = useState<IndexPath>(
+    new IndexPath(0)
+  );
+  const displayValue = data[selectedIndex.row];
+  const renderOption = (title): React.ReactElement => (
+    <SelectItem title={title} />
+  );
+
+  const [press, setPress] = useState(false);
 
   if (!checked) {
     return (
@@ -62,6 +93,22 @@ const TrainbookingScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           </View>
           <View>
             <DepartureDatepicker />
+          </View>
+          <View style={styles.selectedPassenger}>
+            <Text category="h6">Hành khách</Text>
+            <Select
+              style={{ marginTop: 10 }}
+              placeholder=" "
+              value={displayValue}
+              multiSelect={true}
+              selectedIndex={selectedIndex}
+              onSelect={(index: IndexPath) => setSelectedIndex(index)}
+            >
+              {data.map(renderOption)}
+            </Select>
+          </View>
+          <View style={styles.button}>
+            <Button accessoryLeft={searchIcon} onPress={() => navigation.navigate("TrainBooking2")}>Tìm kiếm</Button>
           </View>
         </SafeAreaView>
       </>
@@ -104,7 +151,22 @@ const TrainbookingScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           </View>
           <View>
             <DepartureDatepicker />
-            <ArrivalDatepicker/>
+            <ArrivalDatepicker />
+          </View>
+          <View style={styles.selectedPassenger}>
+            <Text category="h6">Hành khách</Text>
+            <Select
+              style={{ marginTop: 10 }}
+              value={displayValue}
+              selectedIndex={selectedIndex}
+              multiSelect={true}
+              onSelect={(index: IndexPath) => setSelectedIndex(index)}
+            >
+              {data.map(renderOption)}
+            </Select>
+          </View>
+          <View style={styles.button}>
+            <Button accessoryLeft={searchIcon} onPress={() => setPress(true)}>Tìm kiếm</Button>
           </View>
         </SafeAreaView>
       </>
@@ -137,6 +199,19 @@ const styles = StyleSheet.create({
   datepicker: {
     margin: 20,
   },
+  selectedPassenger: {
+    height: 128,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 10,
+  },
+  button: { 
+  marginLeft: 20,
+  marginRight: 20,
+  marginTop: 10,
+  flex: 1,
+  justifyContent: 'flex-end',
+ },
 });
 
 export default TrainbookingScreen;
