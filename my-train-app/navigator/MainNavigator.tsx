@@ -4,6 +4,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Image } from "@rneui/themed";
 import TabNavigator from "./TabNavigator";
 import TrainbookingScreen from "../screens/TrainBookingScreen";
+import TrainbookingScreen2 from "../screens/TrainBookingScreen2";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +19,8 @@ const MainNavigator: React.FC = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen name="TrainBooking" component={TrainbookingScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="TrainBooking2" component={TrainbookingScreen2} options={{ headerShown: false }} />
+
       </Stack.Navigator>
     </>
   );
