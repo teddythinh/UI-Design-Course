@@ -5,8 +5,8 @@ import {
   TextProps,
 } from "@ui-kitten/components";
 import cities from "../assets/cities";
-import styles from "../stylesheet/styles";
 import { RenderProp } from "@ui-kitten/components/devsupport";
+import { StyleSheet } from "react-native";
 
 const filter = (
   item: { title: any; body?: string; imgUrl?: string },
@@ -50,3 +50,10 @@ export const AutocompleteCities = (): React.ReactElement => {
 };
 
 export default AutocompleteCities;
+
+const styles = StyleSheet.create({
+  inputText: {
+    margin: 10,
+    width: 280,
+  },
+});
