@@ -1,62 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-} from 'react-native';
-import dayjs from 'dayjs';
+import dayjs, { Dayjs } from "dayjs";
+import duration from "dayjs/plugin/duration";
+import React, { useMemo, useState } from "react";
 
-const CountdownTimer = () => {
-  const [deadline, setDeadline] = useState(dayjs());
-  const [days, setDays] = useState(0);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+dayjs.extend(duration);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const now = dayjs();
-      const remainingTime = deadline.diff(now);
+interface CountdownProps {
+  endTime: Dayjs;
+}
 
-      const daysRemaining = remainingTime.days();
-      const hoursRemaining = remainingTime.hours();
-      const minutesRemaining = remainingTime.minutes();
-      const secondsRemaining = remainingTime.seconds();
+const Countdown: React.FC<CountdownProps> = ({ endTime }) => {
+  const [time, setTime] = useState<string>();
 
-      setDays(daysRemaining);
-      setHours(hoursRemaining);
-      setMinutes(minutesRemaining);
-      setSeconds(secondsRemaining);
-    }, 1000);
+  useMemo(() => {
+    var currentTime = dayjs();
+    var diffTime = endTime.unix() - currentTime.unix();
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+    var duration = dayjs.duration(diffTime * 1000, "milliseconds");
+    var interval = 1000;
+    const twoDP = (n: number) => (n > 9 ? n : "0" + n);
 
-  return (
-    <View style={styles.container}>
-      <ScrollView>
-        <Text style={styles.text}>Days Remaining: {days}</Text>
-        <Text style={styles.text}>Hours Remaining: {hours}</Text>
-        <Text style={styles.text}>Minutes Remaining: {minutes}</Text>
-        <Text style={styles.text}>Seconds Remaining: {seconds}</Text>
-      </ScrollView>
-    </View>
-  );
+    setInterval(function () {
+      duration = dayjs.duration(
+        duration.asMilliseconds() - interval,
+        "milliseconds"
+      );
+      let timestamp = `${
+        duration.days() && duration.days() + "d "
+      }${duration.hours()}h ${twoDP(duration.minutes())}m ${twoDP(
+        duration.seconds()
+      )}s`;
+      setTime(timestamp);
+    }, interval);
+  }, [endTime]);
+  return <>{time}</>;
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 20,
-    color: 'black',
-  },
-});
-
-export default CountdownTimer;
+export default Countdown;
