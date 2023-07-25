@@ -25,37 +25,44 @@ const HistorySubScreen = (props: { history: any }): React.ReactElement => {
   return (
     <>
       <ScrollView>
-        <FlatList
-          data={history}
-          scrollEnabled={false}
-          renderItem={({ item }) => (
-            <Card style={styles.card}>
-              <Image
-                source={{ uri: item.img }}
-                style={{ width: 320, height: 200, borderRadius: 10 }}
-              />
-              <Text category="h6" style={{marginTop: 10}}>{item.title}</Text>
-              <Text
-                style={{ marginBottom: 10, marginTop: 10, fontSize: 20 }}
-              >{`${item.startDate} - ${item.endDate}`}</Text>
-              <View style={[styles.footerContainer]}>
-                <Button
-                  style={styles.footerControl}
-                  size="small"
-                  status="basic"
-                >
-                  BỎ QUA
-                </Button>
-                <Button style={styles.footerControl} size="small">
-                  ĐÁNH GIÁ
-                </Button>
-              </View>
-            </Card>
-          )}
-        />
+        <View>
+          <FlatList
+            data={history}
+            scrollEnabled={false}
+            renderItem={({ item }) => (
+              <Card style={styles.card}>
+                <Image
+                  source={{ uri: item.img }}
+                  style={{ width: 320, height: 200, borderRadius: 10 }}
+                />
+                <Text category="h6" style={{ marginTop: 10 }}>
+                  {item.title}
+                </Text>
+                <Text
+                  style={{ marginBottom: 10, marginTop: 10, fontSize: 20 }}
+                >{`${item.startDate} - ${item.endDate}`}</Text>
+                <View style={[styles.footerContainer]}>
+                  <Button
+                    style={styles.footerControl}
+                    size="small"
+                    status="basic"
+                  >
+                    BỎ QUA
+                  </Button>
+                  <Button style={styles.footerControl} size="small">
+                    ĐÁNH GIÁ
+                  </Button>
+                </View>
+              </Card>
+            )}
+          />
+        </View>
       </ScrollView>
 
-      <FAB color={"#47EAE0"} style={{ position: "absolute", bottom: 20, right: 20 }}>
+      <FAB
+        color={"#47EAE0"}
+        style={{ position: "absolute", bottom: 20, right: 20 }}
+      >
         <Icon name="plus" size={30} color="#fff" />
       </FAB>
     </>
