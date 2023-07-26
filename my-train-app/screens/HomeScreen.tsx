@@ -59,7 +59,6 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
             justifyContent: "center",
             alignItems: "center",
             paddingTop: insets.top,
-            paddingBottom: insets.bottom,
             paddingLeft: insets.left,
             paddingRight: insets.right,
           }}
