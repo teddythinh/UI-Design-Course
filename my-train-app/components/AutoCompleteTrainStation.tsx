@@ -43,7 +43,6 @@ export const AutocompleteTrainStation = (): React.ReactElement => {
       placement="inner top"
       onSelect={onSelect}
       onChangeText={onChangeText}
-      status="primary"
       style={styles.inputText}
     >
       {data.map(renderOption)}
