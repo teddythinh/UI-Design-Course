@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Pressable } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faCouch } from "@fortawesome/free-solid-svg-icons";
 import {
   Text,
   Button,
@@ -12,6 +12,7 @@ import {
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import SeatList from "../components/SeatList";
 
 dayjs.extend(duration);
 
@@ -108,6 +109,36 @@ const TrainBookingSeatScreen: React.FC<Props> = ({ navigation }) => {
             <Button>6</Button>
             <Button>7</Button>
           </ButtonGroup>
+          <View style={{ flexDirection: "row", marginTop: 10 }}>
+            <Text category="s1" style={{ marginTop: 2 }}>
+              Còn trống
+            </Text>
+            <FontAwesomeIcon
+              icon={faCouch}
+              size={25}
+              color="gray"
+              style={{ marginRight: 5, marginLeft: 5 }}
+            />
+            <Text category="s1" style={{ marginTop: 2 }}>
+              Đang chọn
+            </Text>
+            <FontAwesomeIcon
+              icon={faCouch}
+              size={25}
+              color="red"
+              style={{ marginRight: 5, marginLeft: 5 }}
+            />
+            <Text category="s1" style={{ marginTop: 2 }}>
+              Đã được đặt
+            </Text>
+            <FontAwesomeIcon
+              icon={faCouch}
+              size={25}
+              color="blue"
+              style={{ marginLeft: 5 }}
+            />
+          </View>
+          <SeatList />
           <Button
             style={styles.button}
             accessoryLeft={searchIcon}
