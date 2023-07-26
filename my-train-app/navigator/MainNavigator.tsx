@@ -6,6 +6,7 @@ import TabNavigator from "./TabNavigator";
 import TrainbookingScreen from "../screens/TrainBookingSearchScreen";
 import TrainBookingSeatScreen from "../screens/TrainBookingSeatScreen";
 import TrainBookingInformationScreen from "../screens/TrainBookingInformationScreen";
+import PaymentMethodScreen from "../screens/PaymentMethodScreen";
 
 
 const Stack = createNativeStackNavigator();
@@ -22,7 +23,7 @@ const MainNavigator: React.FC = () => {
         <Stack.Screen name="TrainBookingSearch" component={TrainbookingScreen} options={{ headerShown: false }} />
         <Stack.Screen name="TrainBookingSeat" component={TrainBookingSeatScreen} options={{ headerShown: false }} />
         <Stack.Screen name="TrainBookingInformation" component={TrainBookingInformationScreen} options={{ headerShown: false }} />
-
+        <Stack.Screen name="PaymentMethod" component={PaymentMethodScreen} options={{ headerShown: false}} />
       </Stack.Navigator>
     </>
   );
