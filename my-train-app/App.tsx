@@ -8,6 +8,9 @@ import * as eva from "@eva-design/eva";
 import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { StripeProvider } from "@stripe/stripe-react-native";
+import { enableLatestRenderer } from "react-native-maps";
+
+enableLatestRenderer();
 
 const Stack = createNativeStackNavigator();
 
