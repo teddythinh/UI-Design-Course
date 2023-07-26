@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Pressable, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
@@ -9,7 +9,15 @@ import {
   IndexPath,
   Select,
   SelectItem,
+  Button,
 } from "@ui-kitten/components";
+import {
+  CardField,
+  useStripe,
+  initStripe,
+  usePaymentSheet,
+} from "@stripe/stripe-react-native";
+
 import BirthdayDatepicker from "../components/BirthdayDatePicker";
 
 const data = [
@@ -27,6 +35,7 @@ const TrainBookingInformationScreen: React.FC<Props> = ({ navigation }) => {
   const insets = useSafeAreaInsets();
   const [name, setName] = useState("");
   const [id, setId] = useState("");
+
   const [selectedIndex, setSelectedIndex] = useState<IndexPath>(
     new IndexPath(0)
   );
@@ -117,6 +126,30 @@ const TrainBookingInformationScreen: React.FC<Props> = ({ navigation }) => {
               <BirthdayDatepicker />
             </>
           )}
+
+          <Button style={{ marginTop: 20 }} onPress={() => navigation.navigate("PaymentMethod")}>Thanh toán</Button>
+
+          {/* <CardField
+            postalCodeEnabled={false}
+            placeholders={{
+              number: "4242 4242 4242 4242",
+            }}
+            cardStyle={{
+              backgroundColor: "#FFFFFF",
+              textColor: "#000000",
+            }}
+            style={{
+              width: "100%",
+              height: 50,
+              marginVertical: 30,
+            }}
+            onCardChange={(cardDetails) => {
+              console.log("cardDetails", cardDetails);
+            }}
+            onFocus={(focusedField) => {
+              console.log("focusField", focusedField);
+            }}
+          /> */}
         </View>
       </View>
     </>
