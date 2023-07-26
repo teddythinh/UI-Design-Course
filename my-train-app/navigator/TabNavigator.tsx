@@ -19,22 +19,22 @@ const TabNavigator: React.FC = () => {
       <Tab.Navigator>
         <Tab.Screen
           name="Home"
-          options={{ headerShown: false, tabBarIcon: () => <FontAwesomeIcon icon={faHouse} size={25} /> }}
+          options={{ headerShown: false, tabBarIcon: () => <FontAwesomeIcon icon={faHouse} size={25} color="orange" /> }}
           component={HomeScreen}
         />
         <Tab.Screen
           name="History"
-          options={{ headerShown: false, tabBarIcon: () => <FontAwesomeIcon icon={faClockRotateLeft} size={25} /> }}
+          options={{ headerShown: false, tabBarIcon: () => <FontAwesomeIcon icon={faClockRotateLeft} size={25} color="green" /> }}
           component={HistoryScreen}
         />
         <Tab.Screen
           name="Search"
-          options={{ headerShown: false, tabBarIcon: () => <FontAwesomeIcon icon={faMagnifyingGlass} size={25} /> }}
+          options={{ headerShown: false, tabBarIcon: () => <FontAwesomeIcon icon={faMagnifyingGlass} size={25} color="red" /> }}
           component={SearchScreen}
         />
         <Tab.Screen
           name="Attractions"
-          options={{ headerShown: false, tabBarIcon: () => <FontAwesomeIcon icon={faLandmark} size={25} /> }}
+          options={{ headerShown: false, tabBarIcon: () => <FontAwesomeIcon icon={faLandmark} size={25} color="blue" /> }}
           component={CityDetailsScreen}
         />
         <Tab.Screen
