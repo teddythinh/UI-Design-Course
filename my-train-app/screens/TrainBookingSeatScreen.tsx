@@ -1,11 +1,5 @@
-import React, { useMemo, useState, useRef } from "react";
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  TouchableHighlight,
-  Pressable,
-} from "react-native";
+import React, { useState, useEffect } from "react";
+import { StyleSheet, View, Pressable } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -21,7 +15,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 dayjs.extend(duration);
 
-type BookingScreen2Props = {
+type Props = {
   navigation: any;
 };
 
@@ -29,10 +23,28 @@ const searchIcon = (props): IconElement => (
   <Icon {...props} name="search-outline" />
 );
 
-const TrainBookingSeatScreen: React.FC<BookingScreen2Props> = ({
-  navigation,
-}) => {
+let timer: any = () => {};
+
+const TrainBookingSeatScreen: React.FC<Props> = ({ navigation }) => {
   const insets = useSafeAreaInsets();
+  const [timeLeft, setTimeLeft] = useState(
+    dayjs.duration(5, "minutes").asSeconds()
+  );
+
+  const startTimer = () => {
+    timer = setTimeout(() => {
+      if (timeLeft <= 0) {
+        clearTimeout(timer);
+        return false;
+      }
+      setTimeLeft(timeLeft - 1);
+    }, 1000);
+  };
+
+  useEffect(() => {
+    startTimer();
+    return () => clearTimeout(timer);
+  });
   return (
     <>
       <View
@@ -61,7 +73,9 @@ const TrainBookingSeatScreen: React.FC<BookingScreen2Props> = ({
           </Pressable>
           <Text category="h4">Chọn chỗ</Text>
         </View>
-        <Text style={styles.timeLeft} category="h6">Thời gian còn lại:</Text>
+        <Text style={styles.timeLeft} category="h6">
+          Thời gian còn lại: {timeLeft} giây
+        </Text>
 
         <View style={{ alignItems: "center", justifyContent: "center" }}>
           <Text category="h6" style={styles.trainId}>
@@ -110,17 +124,15 @@ const TrainBookingSeatScreen: React.FC<BookingScreen2Props> = ({
 const styles = StyleSheet.create({
   timeLeft: {
     margin: 20,
+    color: "red",
   },
   trainId: {
-    margin: 10
+    margin: 10,
   },
   button: {
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 10,
+    margin: 20,
     justifyContent: "flex-end",
   },
-
 });
 
 export default TrainBookingSeatScreen;
