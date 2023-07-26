@@ -81,6 +81,7 @@ const TrainbookingScreen: React.FC<BookingScreenProps> = ({ navigation }) => {
         </View>
 
         <View style={styles.departureStation}>
+          <Text category="h6">Ga đi</Text>
           <AutocompleteTrainStation />
         </View>
         <View style={styles.arrivalStation}>
@@ -112,6 +113,7 @@ const TrainbookingScreen: React.FC<BookingScreenProps> = ({ navigation }) => {
         <View style={styles.selectedPassenger}>
           <Text category="h6">Hành khách</Text>
           <Select
+            id="select"
             style={{ marginTop: 10 }}
             placeholder=" "
             value={displayValue}
