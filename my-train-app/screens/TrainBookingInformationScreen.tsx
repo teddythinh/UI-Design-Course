@@ -85,6 +85,7 @@ const TrainBookingInformationScreen: React.FC<Props> = ({ navigation }) => {
             Đối tượng
           </Text>
           <Select
+            id="select"
             style={styles.select}
             placeholder="Default"
             value={displayValue}
@@ -120,14 +121,27 @@ const TrainBookingInformationScreen: React.FC<Props> = ({ navigation }) => {
                 onChangeText={(nextValue) => setId(nextValue)}
               />
             </>
-          ) : (
+          ) : selectedIndex.row === 3 ? (
             <>
               <Text category="h6">Ngày sinh</Text>
               <BirthdayDatepicker />
+              <Text category="h6" style={{ marginBottom: 10 }}>
+                CCCD/CMND
+              </Text>
+              <Input
+                style={{ marginBottom: 10 }}
+                value={id}
+                onChangeText={(nextValue) => setId(nextValue)}
+              />
             </>
-          )}
+          ) : null}
 
-          <Button style={{ marginTop: 20 }} onPress={() => navigation.navigate("PaymentMethod")}>Thanh toán</Button>
+          <Button
+            style={{ marginTop: 20 }}
+            onPress={() => navigation.navigate("PaymentMethod")}
+          >
+            Thanh toán
+          </Button>
 
           {/* <CardField
             postalCodeEnabled={false}
