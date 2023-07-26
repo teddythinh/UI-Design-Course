@@ -38,12 +38,19 @@ const TabNavigator = () => (
 );
 
 const HistoryScreen: React.FC = () => {
-  const tabBarState = useTabBarState();
+  const insets = useSafeAreaInsets();
   return (
     <>
-    <SafeAreaView style={{ flex: 1 }}>
-    <TabNavigator />
-    </SafeAreaView>
+      <View
+        style={{
+          flex: 1,
+          paddingTop: insets.top,
+          paddingLeft: insets.left,
+          paddingRight: insets.right,
+        }}
+      >
+        <TabNavigator />
+      </View>
     </>
   );
 };
