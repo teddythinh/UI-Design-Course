@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { SafeAreaView, View, StyleSheet, Pressable } from "react-native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Image } from "@rneui/themed";
+import { View, StyleSheet, Pressable } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -16,11 +14,11 @@ import {
   IconElement,
 } from "@ui-kitten/components";
 
-import HomeScreen from "./HomeScreen";
 import AutocompleteTrainStation from "../components/AutoCompleteTrainStation";
 import DepartureDatepicker from "../components/DepartureDatePicker";
 import ArrivalDatepicker from "../components/ArrivalDatePicker";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+
 interface BookingScreenProps {
   navigation: any;
 }
@@ -102,18 +100,27 @@ const TrainbookingScreen: React.FC<BookingScreenProps> = ({ navigation }) => {
 
         {checked ? (
           <View>
+            <Text style={{ marginLeft: 20 }} category="h6">
+              Ngày đi
+            </Text>
             <DepartureDatepicker />
+            <Text style={{ marginLeft: 20 }} category="h6">
+              Ngày về
+            </Text>
             <ArrivalDatepicker />
           </View>
         ) : (
           <View>
+            <Text style={{ marginLeft: 20 }} category="h6">
+              Ngày đi
+            </Text>
             <DepartureDatepicker />
           </View>
         )}
+
         <View style={styles.selectedPassenger}>
           <Text category="h6">Hành khách</Text>
           <Select
-            id="select"
             style={{ marginTop: 10 }}
             placeholder=" "
             value={displayValue}
