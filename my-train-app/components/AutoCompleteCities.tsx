@@ -41,7 +41,7 @@ export const AutocompleteCities = (): React.ReactElement => {
       placement="inner top"
       onSelect={onSelect}
       onChangeText={onChangeText}
-      status="primary"
+      size="large"
       style={styles.inputText}
     >
       {data.map(renderOption)}
@@ -54,6 +54,6 @@ export default AutocompleteCities;
 const styles = StyleSheet.create({
   inputText: {
     margin: 10,
-    width: 280,
+    width: 300,
   },
 });

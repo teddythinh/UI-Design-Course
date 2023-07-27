@@ -1,10 +1,8 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { TabBar, Tab, Icon, TabBarProps } from "@ui-kitten/components";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import UpComingScreen from "./UpComingScreen";
 import HistorySubScreen from "./HistorySubScreen";

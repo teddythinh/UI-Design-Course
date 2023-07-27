@@ -1,15 +1,21 @@
 import React from "react";
-import { View, Pressable } from "react-native";
+import { View, Pressable, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { Text } from "@ui-kitten/components";
+import { Text, Button, Icon, IconElement } from "@ui-kitten/components";
+import BankList from "../components/BankList";
+// import EWalletList from "../components/EWalletList";
+
+const checkIcon = (props): IconElement => (
+  <Icon {...props} name="checkmark-circle-2-outline" />
+);
 
 type Props = {
-    navigation: any;
+  navigation: any;
 };
 
-const PaymentMethodScreen: React.FC<Props> = ( { navigation }) => {
+const PaymentMethodScreen: React.FC<Props> = ({ navigation }) => {
   const insets = useSafeAreaInsets();
 
   return (
@@ -36,9 +42,31 @@ const PaymentMethodScreen: React.FC<Props> = ( { navigation }) => {
           </Pressable>
           <Text category="h5">Phương thức thanh toán</Text>
         </View>
+        <View style={styles.title}>
+          <Text category="h4" style={{ color: "blue" }}>
+            Các ngân hàng
+          </Text>
+          <BankList />
+        </View>
+        
+        {/* <View style={styles.title}>
+        <Text category="h4" style={{color: "blue"}}>Các ví điện tử</Text>
+        </View>
+        <EWalletList/> */}
+        <View style={{ height: 20, marginLeft: 20, marginRight: 20, marginTop: 100 }}>
+          <Button accessoryLeft={checkIcon} onPress={() => navigation.navigate("PaymentInformation")}>Xác nhận</Button>
+        </View>
       </View>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  title: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 50
+  },
+});
 
 export default PaymentMethodScreen;

@@ -7,7 +7,6 @@ import {
   Layout,
   DatepickerProps,
 } from "@ui-kitten/components";
-import dayjs from "dayjs";
 
 const CalendarIcon = (props): IconElement => (
   <Icon {...props} name="calendar" />
@@ -17,8 +16,6 @@ const useDatepickerState = (initialDate = null): DatepickerProps => {
   const [date, setDate] = React.useState(initialDate);
   return { date, onSelect: setDate };
 };
-
-const now = dayjs();
 
 export const BirthdayDatepicker = (): React.ReactElement => {
   const [date, setDate] = React.useState(new Date());

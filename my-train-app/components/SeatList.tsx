@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Pressable } from "react-native";
+import React, { useState } from "react";
+import { View, Pressable } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faChevronLeft, faCouch } from "@fortawesome/free-solid-svg-icons";
+import { faCouch } from "@fortawesome/free-solid-svg-icons";
 import { Text } from "@ui-kitten/components";
 
 // make a component called Seat, has 3 props: seatNumber, isBooked, isSelecting, isAvailable

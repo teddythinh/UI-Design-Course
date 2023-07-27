@@ -1,18 +1,14 @@
-import React, { createRef, useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   ImageBackground,
   ScrollView,
   FlatList,
-  ActivityIndicator,
   StyleSheet,
   Pressable,
 } from "react-native";
-import { Image, Text, Button, Tile } from "@rneui/themed";
-import { Input } from "@ui-kitten/components/ui";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Image, Button, Tile } from "@rneui/themed";
+import { Text } from "@ui-kitten/components";
 import { AutocompleteCities } from "../components/AutoCompleteCities";
 import dayjs from "dayjs";
 import isLeapYear from "dayjs/plugin/isLeapYear";
@@ -64,48 +60,41 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           }}
         >
           <Image source={{ uri: URI }} style={styles.URI} />
-          <Text style={{ margin: 5, fontSize: 20 }}>
+          <Text
+            category="h5"
+            style={{ marginTop: 5, color: "#34AEF9" }}
+          >
             {date.format("dddd, DD MMMM")}
           </Text>
-          <Text style={{ margin: 5, fontSize: 20 }}>
+          <Text
+            category="h6"
+            style={{ margin: 5, fontSize: 25, color: "orange" }}
+          >
             {date.format("HH:mm:ss")}
           </Text>
           <AutocompleteCities />
-          <Text style={{ margin: 10 }}>
+          <Text category="h6" style={{ margin: 10 }}>
             Bạn muốn đặt phương tiện di chuyển?
           </Text>
           <Pressable onPress={() => navigation.navigate("TrainBookingSearch")}>
-          <ImageBackground source={{ uri: URI2 }} style={styles.URI2}>
-            <Button
-              title="Đặt tàu ngay"
-              buttonStyle={styles.button}
-              containerStyle={{
-                width: 142,
-                marginHorizontal: 10,
-                marginVertical: 10,
-              }}
-              onPress={() => navigation.navigate("TrainBookingSearch")}
-            />
-          </ImageBackground>
+            <ImageBackground source={{ uri: URI2 }} style={styles.URI2}>
+              <Button
+                title="Đặt tàu ngay"
+                buttonStyle={styles.button}
+                containerStyle={{
+                  width: 142,
+                  marginHorizontal: 10,
+                  marginVertical: 10,
+                }}
+                titleStyle={{ fontSize: 20, fontWeight: "bold" }}
+                onPress={() => navigation.navigate("TrainBookingSearch")}
+              />
+            </ImageBackground>
           </Pressable>
 
-          
-
-          {/* <FlatList
-            data={cities}
-            //style={styles.list}
-            renderItem={({ item }) => (
-              <Image
-                source={{ uri: item.imgUrl }}
-                style={styles.URI2}
-                // containerStyle={styles.item}
-                PlaceholderContent={<ActivityIndicator />}
-                // onPress={() => navigation.navigate('CityDetails')}
-              />
-            )}
-            scrollEnabled={false}
-          /> */}
-          <Text style={{ margin: 10 }}>Những tỉnh thành nổi tiếng</Text>
+          <Text category="h6" style={{ margin: 10 }}>
+            Những tỉnh thành nổi tiếng
+          </Text>
           <FlatList
             data={cities}
             scrollEnabled={false}
@@ -114,9 +103,13 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
                 imageSrc={{ uri: item.imgUrl }}
                 imageContainerStyle={{ borderRadius: 10 }}
                 activeOpacity={1}
-                width={300}
+                width={350}
                 title={item.title}
-                titleStyle={{ fontSize: 20, fontWeight: "bold" }}
+                titleStyle={{
+                  fontSize: 20,
+                  fontWeight: "bold",
+                  textAlign: "center",
+                }}
                 onPress={() => navigation.navigate("CityDetails")}
               />
             )}
@@ -134,11 +127,10 @@ const styles = StyleSheet.create({
     width: 350,
     height: 200,
     borderRadius: 10,
-    marginTop: 20,
     overflow: "hidden",
   },
   URI2: {
-    width: 300,
+    width: 350,
     height: 200,
     borderRadius: 10,
     marginTop: 5,
@@ -169,7 +161,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#FF6868",
     padding: 10,
-    borderRadius: 10,
+    borderRadius: 5,
   },
   list: {
     width: "100%",

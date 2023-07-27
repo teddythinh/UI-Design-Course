@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { View, Pressable, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
@@ -11,12 +11,12 @@ import {
   SelectItem,
   Button,
 } from "@ui-kitten/components";
-import {
-  CardField,
-  useStripe,
-  initStripe,
-  usePaymentSheet,
-} from "@stripe/stripe-react-native";
+// import {
+//   CardField,
+//   useStripe,
+//   initStripe,
+//   usePaymentSheet,
+// } from "@stripe/stripe-react-native";
 
 import BirthdayDatepicker from "../components/BirthdayDatePicker";
 

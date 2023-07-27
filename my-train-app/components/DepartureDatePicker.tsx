@@ -27,7 +27,6 @@ export const DepartureDatepicker = (): React.ReactElement => {
   return (
     <Layout style={styles.container} level="1">
       <Datepicker
-        label="Ngày đi"
         placeholder="Chọn ngày"
         date={date}
         onSelect={(nextDate) => setDate(nextDate)}

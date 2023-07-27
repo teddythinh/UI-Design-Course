@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import { Layout, Card, List, Button, Text } from "@ui-kitten/components";
+import { Card, Button, Text } from "@ui-kitten/components";
 import {
-  ListRenderItemInfo,
   StyleSheet,
   View,
-  ViewProps,
   ScrollView,
   FlatList,
 } from "react-native";
-import { Image, FAB, ListItem } from "@rneui/themed";
+import { Image, FAB } from "@rneui/themed";
 import dayjs from "dayjs";
 import Icon from "react-native-vector-icons/FontAwesome";
 
