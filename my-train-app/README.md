@@ -1,4 +1,4 @@
-# TypeScript Example
+# My Train App
 
 <p>
   <!-- iOS -->
@@ -9,20 +9,24 @@
   <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
 </p>
 
-```sh
-npx create-react-native-app -t with-typescript
+## Techstack
+
+- React Native
+- Expo
+- React Navigation
+
+## Installation
+
+```bash
+npm install
 ```
 
-TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.
+Note: If you use npm, install the dependencies with `npm install`. If you use Yarn, install the dependencies with `yarn`.
 
-## 🚀 How to use
+## Usage
 
-```sh
-npm run web
-```
-
-or
-
-```sh
+```bash
 npm start
 ```
+
+This will start a development server for you.
