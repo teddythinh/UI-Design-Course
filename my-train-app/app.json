@@ -2,15 +2,37 @@
     "expo": {
         "name": "my-train-app",
         "slug": "my-train-app",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "",
+        "userInterfaceStyle": "automatic",
+        "splash": {
+            "image": "",
+            "resizeMode": "contain",
+            "backgroundColor": "#ffffff"
+        },
+        "assetBundlePatterns": [
+            "**/*"
+        ],
         "ios": {
+            "supportsTablet": true,
             "bundleIdentifier": "com.example.my-train",
             "config": {
-                "googleMapsApiKey": "AIzaSyCIuGWq3EGx_QTawb8q8S4iMdD1EgekCLI"   
+                "googleMapsApiKey": "AIzaSyCIuGWq3EGx_QTawb8q8S4iMdD1EgekCLI"
             },
             "infoPlist": {
                 "NSLocationWhenInUseUsageDescription": "This app needs access to location when open.",
                 "NSLocationAlwaysAndWhenInUseUsageDescription": "This app needs access to location when in the background."
             }
+        },
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "",
+                "backgroundColor": "#ffffff"
+            }
+        },
+        "web": {
+            "favicon": ""
         },
         "plugins": [
             [
@@ -22,7 +44,9 @@
                     "isIosBackgroundLocationEnabled": true,
                     "isAndroidBackgroundLocationEnabled": true
                 }
+                
             ]
+            
         ]
     }
 }
