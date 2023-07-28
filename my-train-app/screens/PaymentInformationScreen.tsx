@@ -3,7 +3,7 @@ import { View, StyleSheet, Pressable, Image } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { Text, Input } from "@ui-kitten/components";
+import { Text, Input, Button } from "@ui-kitten/components";
 
 import banks from "../assets/banks";
 
@@ -84,6 +84,9 @@ const PaymentInformationScreen: React.FC<Props> = ({ navigation }) => {
           </Text>
           <Text style={{ color: "red" }} category="h6">1.000.000đ</Text>
           </View>
+          <Button style={{ marginTop: 20 }} onPress={() => navigation.navigate("PaymentConfirm")}>
+            Xác nhận
+          </Button>
         </View>
       </View>
     </>
