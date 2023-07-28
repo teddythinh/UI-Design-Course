@@ -8,12 +8,13 @@ import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { enableLatestRenderer } from "react-native-maps";
 import { AppRegistry } from "react-native";
-import { expo } from "./app.json";
+import { PaperProvider } from "react-native-paper";
 
+import { expo } from "./app.json";
 import MainNavigator from "./navigator/MainNavigator";
 
 const appName = expo.name;
-console.log(appName)
+console.log(appName);
 
 enableLatestRenderer();
 
@@ -28,8 +29,10 @@ export default function App() {
           <NavigationContainer>
             <IconRegistry icons={EvaIconsPack} />
             <ApplicationProvider {...eva} theme={eva.light}>
-              <MainNavigator />
-              <StatusBar style="auto" />
+              <PaperProvider>
+                <MainNavigator />
+                <StatusBar style="auto" />
+              </PaperProvider>
             </ApplicationProvider>
           </NavigationContainer>
         </ThemeProvider>
