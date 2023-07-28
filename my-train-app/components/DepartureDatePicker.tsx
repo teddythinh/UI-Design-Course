@@ -8,6 +8,10 @@ import {
   DatepickerProps,
 } from "@ui-kitten/components";
 import dayjs from "dayjs";
+import moment from "moment";
+import { MomentDateService } from "@ui-kitten/moment";
+
+const dateService = new MomentDateService();
 
 const CalendarIcon = (props): IconElement => (
   <Icon {...props} name="calendar" />
@@ -21,7 +25,7 @@ const useDatepickerState = (initialDate = null): DatepickerProps => {
 const now = dayjs();
 
 export const DepartureDatepicker = (): React.ReactElement => {
-  const [date, setDate] = React.useState(new Date());
+  const [date, setDate] = React.useState(moment());
   const boundingPickerState = useDatepickerState();
   const minPickerState = useDatepickerState();
   return (
@@ -29,7 +33,7 @@ export const DepartureDatepicker = (): React.ReactElement => {
       <Datepicker
         placeholder="Chọn ngày"
         date={date}
-        onSelect={(nextDate) => setDate(nextDate)}
+        onSelect={(nextDate: moment.Moment) => setDate(nextDate)}
         accessoryRight={CalendarIcon}
         boundingMonth={false}
         {...boundingPickerState}
@@ -37,7 +41,6 @@ export const DepartureDatepicker = (): React.ReactElement => {
         {...minPickerState}
       />
     </Layout>
-    
   );
 };
 

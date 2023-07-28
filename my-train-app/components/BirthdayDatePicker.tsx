@@ -8,7 +8,7 @@ import {
   DatepickerProps,
 } from "@ui-kitten/components";
 import moment from "moment";
-import { MomentDateService } from '@ui-kitten/moment';
+import { MomentDateService } from "@ui-kitten/moment";
 
 const dateService = new MomentDateService();
 
