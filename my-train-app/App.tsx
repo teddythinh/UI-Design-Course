@@ -2,12 +2,18 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import { ThemeProvider } from "@rneui/themed";
-import MainNavigator from "./navigator/MainNavigator";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as eva from "@eva-design/eva";
 import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { enableLatestRenderer } from "react-native-maps";
+import { AppRegistry } from "react-native";
+import { expo } from "./app.json";
+
+import MainNavigator from "./navigator/MainNavigator";
+
+const appName = expo.name;
+console.log(appName)
 
 enableLatestRenderer();
 
@@ -31,3 +37,5 @@ export default function App() {
     </>
   );
 }
+
+AppRegistry.registerComponent(appName, () => App);
