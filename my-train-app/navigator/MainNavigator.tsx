@@ -9,6 +9,7 @@ import PaymentMethodScreen from "../screens/PaymentMethodScreen";
 import PaymentInformationScreen from "../screens/PaymentInformationScreen";
 import PaymentConfirmScreen from "../screens/PaymentConfirmScreen";
 import PaymentSuccessScreen from "../screens/PaymentSuccessScreen";
+import TripBookingAddScreen from "../screens/TripBookingAddScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,7 @@ const MainNavigator: React.FC = () => {
         <Stack.Screen name="PaymentInformation" component={PaymentInformationScreen} options={{ headerShown: false}} />
         <Stack.Screen name="PaymentConfirm" component={PaymentConfirmScreen} options={{ headerShown: false}} />
         <Stack.Screen name="PaymentSuccess" component={PaymentSuccessScreen} options={{ headerShown: false}} />
+        <Stack.Screen name="TripBookingAdd" component={TripBookingAddScreen} options={{ headerShown: false}} />
         
       </Stack.Navigator>
     </>
