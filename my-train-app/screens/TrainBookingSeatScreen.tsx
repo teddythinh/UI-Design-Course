@@ -2,13 +2,8 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Pressable } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronLeft, faCouch } from "@fortawesome/free-solid-svg-icons";
-import {
-  Text,
-  Button,
-  ButtonGroup,
-  Icon,
-  IconElement,
-} from "@ui-kitten/components";
+import { Text, Button, Icon, IconElement } from "@ui-kitten/components";
+import { ButtonGroup } from "@rneui/themed";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -28,6 +23,9 @@ let timer: any = () => {};
 
 const TrainBookingSeatScreen: React.FC<Props> = ({ navigation }) => {
   const insets = useSafeAreaInsets();
+  const [trainId, setTrainId] = useState(0);
+  const [trainBugie, setTrainBugie] = useState(0);
+  const [trainCabin, setTrainCabin] = useState(0);
   const [timeLeft, setTimeLeft] = useState(
     dayjs.duration(5, "minutes").asSeconds()
   );
@@ -82,25 +80,33 @@ const TrainBookingSeatScreen: React.FC<Props> = ({ navigation }) => {
           <Text category="h6" style={styles.trainId}>
             Số hiệu tàu
           </Text>
-          <ButtonGroup>
-            <Button>SE2</Button>
-            <Button>SE4</Button>
-            <Button>SE6</Button>
-            <Button>SE8</Button>
-          </ButtonGroup>
+          <ButtonGroup
+            buttons={["SE2", "SE4", "SE6", "SE8"]}
+            selectedIndex={trainId}
+            onPress={(value) => {
+              setTrainId(value);
+            }}
+          />
           <Text category="h6" style={{ margin: 10 }}>
             Toa tàu
           </Text>
-          <ButtonGroup status="info">
+          {/* <ButtonGroup status="info">
             <Button>Toa 1</Button>
             <Button>Toa 2</Button>
             <Button>Toa 3</Button>
             <Button>Toa 4</Button>
-          </ButtonGroup>
+          </ButtonGroup> */}
+          <ButtonGroup
+            buttons={["Toa 1", "Toa 2", "Toa 3", "Toa 4"]}
+            selectedIndex={trainBugie}
+            onPress={(value) => {
+              setTrainBugie(value);
+            }}
+          />
           <Text category="h6" style={{ margin: 10 }}>
             Khoang tàu
           </Text>
-          <ButtonGroup status="success">
+          {/* <ButtonGroup status="success">
             <Button>1</Button>
             <Button>2</Button>
             <Button>3</Button>
@@ -108,7 +114,14 @@ const TrainBookingSeatScreen: React.FC<Props> = ({ navigation }) => {
             <Button>5</Button>
             <Button>6</Button>
             <Button>7</Button>
-          </ButtonGroup>
+          </ButtonGroup> */}
+          <ButtonGroup
+            buttons={["Khoang 1", "Khoang 2", "Khoang 3", "Khoang 4"]}
+            selectedIndex={trainCabin}
+            onPress={(value) => {
+              setTrainCabin(value);
+            }}
+          />
           <View style={{ flexDirection: "row", marginTop: 10 }}>
             <Text category="s1" style={{ marginTop: 2 }}>
               Còn trống
@@ -139,14 +152,14 @@ const TrainBookingSeatScreen: React.FC<Props> = ({ navigation }) => {
             />
           </View>
           <SeatList />
-          <Button
-            style={styles.button}
-            accessoryLeft={searchIcon}
-            onPress={() => navigation.navigate("TrainBookingInformation")}
-          >
-            Tìm kiếm
-          </Button>
         </View>
+        <Button
+          style={styles.button}
+          accessoryLeft={searchIcon}
+          onPress={() => navigation.navigate("TrainBookingInformation")}
+        >
+          Tìm kiếm
+        </Button>
       </View>
     </>
   );
@@ -162,7 +175,6 @@ const styles = StyleSheet.create({
   },
   button: {
     margin: 20,
-    justifyContent: "flex-end",
   },
 });
 
