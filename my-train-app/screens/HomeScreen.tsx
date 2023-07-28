@@ -110,7 +110,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
                   fontWeight: "bold",
                   textAlign: "center",
                 }}
-                onPress={() => navigation.navigate("CityDetails")}
+                // onPress={() => navigation.navigate("CityDetails")}
               />
             )}
           />
