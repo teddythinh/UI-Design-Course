@@ -7,6 +7,10 @@ import {
   Layout,
   DatepickerProps,
 } from "@ui-kitten/components";
+import moment from "moment";
+import { MomentDateService } from '@ui-kitten/moment';
+
+const dateService = new MomentDateService();
 
 const CalendarIcon = (props): IconElement => (
   <Icon {...props} name="calendar" />
@@ -18,14 +22,15 @@ const useDatepickerState = (initialDate = null): DatepickerProps => {
 };
 
 export const BirthdayDatepicker = (): React.ReactElement => {
-  const [date, setDate] = React.useState(new Date());
+  const [date, setDate] = React.useState(moment());
   const boundingPickerState = useDatepickerState();
   return (
     <Layout style={styles.container} level="1">
       <Datepicker
         placeholder="Chọn ngày"
         date={date}
-        onSelect={(nextDate) => setDate(nextDate)}
+        dateService={dateService}
+        onSelect={(nextDate: moment.Moment) => setDate(nextDate)}
         accessoryRight={CalendarIcon}
         boundingMonth={false}
         {...boundingPickerState}
