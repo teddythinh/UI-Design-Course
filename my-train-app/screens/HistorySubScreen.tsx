@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import { Card, Button, Text } from "@ui-kitten/components";
-import {
-  StyleSheet,
-  View,
-  ScrollView,
-  FlatList,
-} from "react-native";
-import { Image, FAB } from "@rneui/themed";
+import { StyleSheet, View, ScrollView, FlatList } from "react-native";
+import { Image, FAB, AirbnbRating } from "@rneui/themed";
 import dayjs from "dayjs";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 import history from "../assets/history";
 
-const HistorySubScreen = (props: { history: any }): React.ReactElement => {
+type Props = {
+  history;
+  navigation: any;
+};
+
+const HistorySubScreen: React.FC<Props> = ({
+  history: any,
+  navigation,
+}): React.ReactElement => {
   const [date, setDate] = useState(dayjs());
   const [startDate, setStartDate] = useState(dayjs());
   const [endDate, setEndDate] = useState(dayjs());
-  const data = props.history;
+  const data = history;
 
   var customParseFormat = require("dayjs/plugin/customParseFormat");
   dayjs.extend(customParseFormat);
@@ -31,7 +34,7 @@ const HistorySubScreen = (props: { history: any }): React.ReactElement => {
               <Card style={styles.card}>
                 <Image
                   source={{ uri: item.img }}
-                  style={{ width: 320, height: 200, borderRadius: 10 }}
+                  style={{ width: 315, height: 200, borderRadius: 10 }}
                 />
                 <Text category="h6" style={{ marginTop: 10 }}>
                   {item.title}
@@ -39,6 +42,13 @@ const HistorySubScreen = (props: { history: any }): React.ReactElement => {
                 <Text
                   style={{ marginBottom: 10, marginTop: 10, fontSize: 20 }}
                 >{`${item.startDate} - ${item.endDate}`}</Text>
+                <AirbnbRating
+                  defaultRating={4}
+                  isDisabled={true}
+                  showRating={false}
+                  size={20}
+                  ratingContainerStyle={{ marginBottom: 10 }}
+                />
                 <View style={[styles.footerContainer]}>
                   <Button
                     style={styles.footerControl}
@@ -56,12 +66,14 @@ const HistorySubScreen = (props: { history: any }): React.ReactElement => {
           />
         </View>
       </ScrollView>
-
       <FAB
         color={"#47EAE0"}
         style={{ position: "absolute", bottom: 20, right: 20 }}
+        onPress={() => {
+          navigation.navigate("TripBookingAdd");
+        }}
       >
-        <Icon name="plus" size={30} color="#fff" />
+        <Icon name="plus" size={28} color="black" />
       </FAB>
     </>
   );
@@ -69,15 +81,14 @@ const HistorySubScreen = (props: { history: any }): React.ReactElement => {
 
 const styles = StyleSheet.create({
   card: {
-    flex: 1,
-    margin: 2,
+    margin: 5,
   },
   footerContainer: {
     flexDirection: "row",
     justifyContent: "flex-end",
   },
   footerControl: {
-    marginHorizontal: 2,
+    marginHorizontal: 3,
   },
 });
 
