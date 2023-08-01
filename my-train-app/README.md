@@ -11,9 +11,17 @@
 
 ## Techstack
 
-- React Native
-- Expo
-- React Navigation
+- [React Native](https://reactnative.dev/): A library for building native apps using React
+- [Expo](https://expo.dev/): A framework and a platform for universal React applications
+- [React Navigation](https://reactnavigation.org/): Routing and navigation for React Native apps.
+- [TypeScript](https://www.typescriptlang.org/): A typed superset of JavaScript that compiles to plain JavaScript.
+- [React Native Elements](https://reactnativeelements.com/): A cross-platform UI toolkit for React Native.
+- [UI Kitten](https://akveo.github.io/react-native-ui-kitten/): A React Native implementation of the Eva Design System.
+- [Font Awesome](https://fontawesome.com/): The web's most popular icon set and toolkit.
+- [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons): Customizable Icons for React Native.
+- [react-native-maps](https://github.com/react-native-maps/react-native-maps): React Native Mapview component for iOS + Android.
+- [react-native-paper](https://reactnativepaper.com/): Material Design for React Native.
+- [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv): Loads environment variables from .env file.
 
 ## Installation
 
@@ -21,7 +29,7 @@
 npm install
 ```
 
-Note: If you use npm, install the dependencies with `npm install`. If you use Yarn, install the dependencies with `yarn`.
+Note: I use npm for my project. If you use Yarn, install the dependencies with `yarn`.
 
 ## Usage
 
@@ -29,4 +37,4 @@ Note: If you use npm, install the dependencies with `npm install`. If you use Ya
 npm start
 ```
 
-This will start a development server for you.
+This will start a development server for you. After that, you can open the project in Expo Go app on your phone by scanning the QR code on the terminal.

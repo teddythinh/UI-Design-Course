@@ -2,18 +2,11 @@
 
 ## Instruction
 
-Install dependencies
+This repo contains 2 folders: `my-train` and `my-train-app`.
 
-```bash
-npm install
-```
+- ~~`my-train` is the project written for web app.~~
+- `my-train-app` is the project written for mobile app.
 
-Run the project
+Note: The `my-train` project is deprecated because my teacher told me to write the project for mobile app.
 
-~~npm run start:dev~~
-
-The above command is being buggy, so use the following command instead:
-
-```bash
-npm start
-```
+Please refer to the `README.md` in `my-train-app` for more information.
