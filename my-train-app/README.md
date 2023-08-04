@@ -9,6 +9,13 @@
   <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
 </p>
 
+## My configuration
+
+- Windows 11
+- MacOS Ventura 13.5
+- Xcode 14.3.1 (14E300c)
+- gitmoji-cli 8.4.0
+
 ## Techstack
 
 - [React Native](https://reactnative.dev/): A library for building native apps using React
@@ -29,12 +36,63 @@
 npm install
 ```
 
-Note: I use npm for my project. If you use Yarn, install the dependencies with `yarn`.
+or
+
+```bash
+yarn install
+```
 
 ## Usage
 
+There are two ways to start the app that I use:
+
+### 1. Using Expo Go
+
+- Install Expo Go on your device
+- Run
+  - `npx expo start` or
+  - `yarn start` or
+  - `npm start`
+- Scan the QR code with Expo Go (Android) or Camera (iOS)
+- Enjoy!
+
+### 2. Using Android Emulator or iOS Simulator
+
+Refer to this [React Native doc](https://reactnative.dev/docs/environment-setup) for detailed installation.
+
+Refer to this [Android Studio Emulator doc](https://docs.expo.dev/workflow/android-studio-emulator/) and [iOS Simulator doc](https://docs.expo.dev/workflow/ios-simulator/) for detailed installation.
+
+Because I use MacOS, I will only instruct how to run on iOS Simulator.
+
+- **Install Node and Watchman.** If you have already installed Node on your system, make sure it is Node 16 or newer.
+
+> Note: I suggest using [Homebrew](https://brew.sh/).
+
 ```bash
-npm start
+brew install node
+brew install watchman
 ```
 
-This will start a development server for you. After that, you can open the project in Expo Go app on your phone by scanning the QR code on the terminal.
+- Install Xcode via the [Mac App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12). If you have already installed Xcode on your system, make sure it is version 10 or newer.
+
+- Install Command Line Tools in Xcode.
+  - Open Xcode, then choose Settings... (or Preferences...) from the Xcode menu.
+  - Go to the Locations panel and install the tools by selecting the most recent version in the Command Line Tools dropdown.
+
+- Install CocoaPods.
+``
+```bash
+sudo gem install cocoapods
+```
+
+> Note: If CocoaPods requires to instll `activesupport` or any package of Gem, you must use `sudo` before `gem`.
+
+- Run
+  - `npx expo start` or
+  - `yarn start` or
+  - `npm start`
+
+- Press `i` to open iOS Simulator.
+- Enjoy!
+
+> Note: If you use VSCode like me, you can install Android iOS Emulator extension to quick start the emulator.
