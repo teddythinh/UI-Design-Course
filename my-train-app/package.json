@@ -24,6 +24,8 @@
     "dayjs": "^1.11.9",
     "expo": "^49.0.6",
     "expo-location": "^16.1.0",
+    "expo-modules-autolinking": "^1.5.0",
+    "expo-splash-screen": "~0.20.4",
     "expo-status-bar": "^1.6.0",
     "moment": "^2.29.4",
     "react": "18.2.0",
@@ -52,8 +54,8 @@
   },
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
     "postinstall": "react-native setup-ios-permissions",
     "ts:check": "tsc"
