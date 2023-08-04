@@ -83,7 +83,7 @@ brew install watchman
   - Go to the Locations panel and install the tools by selecting the most recent version in the Command Line Tools dropdown.
 
 - Install CocoaPods.
-``
+
 ```bash
 sudo gem install cocoapods
 ```
