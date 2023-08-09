@@ -14,11 +14,19 @@ import dayjs from "dayjs";
 import isLeapYear from "dayjs/plugin/isLeapYear";
 import "dayjs/locale/vi";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import * as Localization from "expo-localization";
+import { I18n } from "i18n-js";
 
 import cities from "../assets/cities";
+import { supportedLanguage } from "../i18n/supportedLanguage";
 
 dayjs.extend(isLeapYear);
 dayjs.locale("vi");
+
+const i18n = new I18n(supportedLanguage);
+i18n.locale = Localization.locale;
+i18n.enableFallback = true;
+i18n.defaultLocale = "vi";
 
 const URI =
   "https://lp-cms-production.imgix.net/2021-01/shutterstockRF_718619590.jpg";
@@ -74,12 +82,13 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           </Text>
           <AutocompleteCities />
           <Text category="h6" style={{ margin: 10 }}>
-            Bạn muốn đặt phương tiện di chuyển?
+            {/* Bạn muốn đặt phương tiện di chuyển? */}
+            {i18n.t("welcome")}
           </Text>
           <Pressable onPress={() => navigation.navigate("TrainBookingSearch")}>
             <ImageBackground source={{ uri: URI2 }} style={styles.URI2}>
               <Button
-                title="Đặt tàu ngay"
+                title={i18n.t("book")}
                 buttonStyle={styles.button}
                 containerStyle={{
                   width: 142,
