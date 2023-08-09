@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Text, Input, Button } from "@ui-kitten/components";
+import TodoList from "../components/TodoList";
 
 type Props = {
   navigation: any;
@@ -26,10 +27,19 @@ const TripBookingAddScreen: React.FC<Props> = ({ navigation }) => {
             <FontAwesomeIcon icon={faChevronLeft} size={25} />
           </Pressable>
         </View>
-        <Text style={{textAlign: "right", margin: 20}}>Tham quan Đà Nẵng</Text>
+        <Text category="h5" style={{textAlign: "right", margin: 20}}>Tham quan Đà Nẵng</Text>
+        <View style={styles.todolist}>
+        <TodoList/>
+        </View>
       </View>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  todolist: {
+    margin: 20,
+  }
+});
 
 export default TripBookingAddScreen;
