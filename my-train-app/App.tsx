@@ -9,6 +9,7 @@ import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { enableLatestRenderer } from "react-native-maps";
 import { AppRegistry } from "react-native";
 import { PaperProvider } from "react-native-paper";
+import { MD3LightTheme as DefaultTheme } from "react-native-paper";
 
 import { expo } from "./app.json";
 import MainNavigator from "./navigator/MainNavigator";
@@ -19,6 +20,15 @@ console.log(appName);
 enableLatestRenderer();
 
 const Stack = createNativeStackNavigator();
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: "tomato",
+    secondary: "yellow",
+  },
+};
 
 export default function App() {
   return (
