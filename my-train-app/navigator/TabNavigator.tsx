@@ -9,6 +9,7 @@ import HistoryScreen from "../screens/HistoryScreen";
 import SearchScreen from "../screens/SearchScreen";
 import CityDetailsScreen from "../screens/CityDetailsScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import TripBookingDetailScreen from "../screens/TripBookingDetailsScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -26,10 +27,15 @@ const TabNavigator: React.FC = () => {
           options={{ headerShown: false, tabBarIcon: () => <FontAwesomeIcon icon={faClockRotateLeft} size={25} color="green" /> }}
           component={HistoryScreen}
         />
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Search"
           options={{ headerShown: false, tabBarIcon: () => <FontAwesomeIcon icon={faMagnifyingGlass} size={25} color="red" /> }}
           component={SearchScreen}
+        /> */}
+        <Tab.Screen
+          name="Search"
+          options={{ headerShown: false, tabBarIcon: () => <FontAwesomeIcon icon={faMagnifyingGlass} size={25} color="red" /> }}
+          component={TripBookingDetailScreen}
         />
         <Tab.Screen
           name="Attractions"
