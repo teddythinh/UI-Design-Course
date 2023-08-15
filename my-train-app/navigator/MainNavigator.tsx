@@ -10,7 +10,6 @@ import PaymentInformationScreen from "../screens/PaymentInformationScreen";
 import PaymentConfirmScreen from "../screens/PaymentConfirmScreen";
 import PaymentSuccessScreen from "../screens/PaymentSuccessScreen";
 import TripBookingAddScreen from "../screens/TripBookingAddScreen";
-
 const Stack = createNativeStackNavigator();
 
 const MainNavigator: React.FC = () => {
