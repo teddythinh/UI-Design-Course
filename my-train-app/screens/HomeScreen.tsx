@@ -102,7 +102,8 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           </Pressable>
 
           <Text category="h6" style={{ margin: 10 }}>
-            Những tỉnh thành nổi tiếng
+            {/* Những tỉnh thành nổi tiếng */}
+            {i18n.t("favCities")}
           </Text>
           <FlatList
             data={cities}
