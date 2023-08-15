@@ -1,5 +1,27 @@
 # Hướng dẫn sử dụng
 
+## Các thông tin cơ bản về chương trình demo
+
+- Tài liệu hướng dẫn để cài đặt và chạy chương trình đã có trên [GitHub repository](https://github.com/teddythinh/UI-Design-Course) của nhóm, bao gồm cả [tiếng Việt](https://github.com/teddythinh/UI-Design-Course/blob/main/my-train-app/HuongDanSuDung.md) và [tiếng Anh](https://github.com/teddythinh/UI-Design-Course/blob/main/my-train-app/README.md).
+- Với demo này, nhóm sẽ thực hiện trên di động, bao gồm cả hai hệ điều hành Android và iOS.
+- Demo có đầy đủ 3 scenario với các screen tương ứng.
+- Đối với giao diện demo sẽ có một chút sự khác biệt so với thiết kế gốc trên Figma, chủ yếu là các component thể hiện do sự hạn chế về các component trên thị trường và các icon để phù hợp với ngữ cảnh.
+- Logic giữa các bước trong một scenario là hợp lý.
+  - Ví dụ như scenario về đặt vé sẽ đi theo trình tự như sau: Tìm kiếm > Chọn tàu, chọn chỗ > Nhập thông tin cơ bản > Thanh toán.
+- Dữ liệu hiện tại là dữ liệu động vì chưa có bước xử lý dữ liệu phía sau.
+
+## Computer Prototype
+
+Nhóm thiết kế Prototype thông qua [Figma](https://www.figma.com/file/uBif5vsZVJyyYg0gNbhU2s/My-Train?type=design&node-id=0%3A1&mode=design&t=pmaKX0w63tv4crL2-1).
+
+Khi chọn link Figma, ta chọn vào nút Present ở góc phải trên cùng của giao diện.
+
+![presentButton](images/PresentButton.png)
+
+Sau đó, ta thấy được giao diện để tương tác và các flow để tương tác tương ứng.
+
+![FullScreen](images/FullScreen.png)
+
 ## Cấu hình
 
 - Windows 11
@@ -9,12 +31,13 @@
 ### Điều kiện cần
 
 - NodeJS phiên bản mới nhất hoặc từ 16 trở lên.
+- Homebrew nếu xài MacOS.
 
-> **CHÚ Ý:** Vì thư viện Kitten UI bị conflict với Expo SDK 49 nên có thể phải install các packages với cờ `--force` hoặc có thể hạ phiên bản Expo SDK xuống 48.
+> **CHÚ Ý:** Vì thư viện Kitten UI bản mới nhất đang có xung đột với Expo SDK 49 nên bạn phải install các packages với cờ `--force` hoặc có thể hạ phiên bản Expo SDK xuống 48.
 
 ## Cài đặt
 
-Ta dùng lệnh này để clone repo xuống:
+Ta dùng lệnh sau để clone repo xuống:
 
 ```bash
 git clone https://github.com/teddythinh/UI-Design-Course.git
@@ -25,6 +48,7 @@ Sau đó, ta chuyển vào thư mục `my-train-app`:
 ```bash
 cd my-train-app
 ```
+
 Ta cài đặt các packages qua lệnh:
 
 ```bash
@@ -41,7 +65,7 @@ yarn install
 
 Có hai cách chạy app mà nhóm sử dụng:
 
-### 1. Sử dụng ứng dụng Expo Go thông qua thiết bị thật **(Recommend)**
+### Cách 1: Sử dụng ứng dụng Expo Go thông qua thiết bị thật **(Recommend)**
 
 1. Ta cần cài ứng dụng Expo Go thông qua Google Play Store trên thiết bị Android hoặc Appstore trên thiết bị iOS.
 2. Ta chạy lệnh:
@@ -52,7 +76,7 @@ Có hai cách chạy app mà nhóm sử dụng:
 3. Lúc này, trên terminal sẽ xuất hiện mã QR code, bạn cần quét mã thông qua ứng dụng Expo Go (Android) hoặc máy ảnh (iOS).
 4. Ứng dụng sẽ cài đặt và chạy.
 
-### 2. Sử dụng các máy ảo Android hoặc iOS
+### Cách 2. Sử dụng các máy ảo Android hoặc iOS
 
 Theo dõi [React Native doc](https://reactnative.dev/docs/environment-setup) để xem chi tiết cài đặt.
 
@@ -73,8 +97,10 @@ brew install watchman
 
 3. Cài đặt Command Line Tools trong Xcode:
 
-- Mở Xcode, chọn Settings (hoặc Preferences) từ menu.
-- Chọn panel Locations, chọn version gần nhất từ Command Line Tools.
+- Mở Xcode, chọn Xcode > Settings (hoặc Preferences) từ menu.
+- Chọn panel Locations, chọn version gần nhất từ Command Line Tools. Lưu ý, phần này cần nhấp  vào dropdown và nhấp vào chọn vì để mặc định có thể máy sẽ chưa cài xuống.
+
+![CLT](images/CLT.png)
 
 4. Cài đặt CocoaPods:
 
