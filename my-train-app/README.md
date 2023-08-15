@@ -9,8 +9,7 @@
   <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
 </p>
 
-> IMPORTANT NOTE: Because the Kitten UI package is conflicting with the Expo SDK 49, you may install with `--force` flag. Or you can downgrade the Expo SDK to 48.
-
+> **IMPORTANT NOTE:** Because the Kitten UI package is conflicting with the Expo SDK 49, you may install with `--force` flag. Or you can downgrade the Expo SDK to 48.
 
 ## My configuration
 
@@ -88,7 +87,7 @@ brew install watchman
 sudo gem install cocoapods
 ```
 
-> Note: If CocoaPods requires to instll `activesupport` or any package of Gem, you must use `sudo` before `gem`.
+> Note: If CocoaPods requires to install `activesupport` or any package of Gem, you must use `sudo` before `gem`.
 
 - Run
   - `npx expo start` or
