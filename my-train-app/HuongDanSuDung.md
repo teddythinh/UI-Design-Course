@@ -1,5 +1,12 @@
 # Hướng dẫn sử dụng
 
+<p>
+  <!-- iOS -->
+  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
+  <!-- Android -->
+  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
+</p>
+
 ## Các thông tin cơ bản về chương trình demo
 
 - Tài liệu hướng dẫn để cài đặt và chạy chương trình đã có trên [GitHub repository](https://github.com/teddythinh/UI-Design-Course) của nhóm, bao gồm cả [tiếng Việt](https://github.com/teddythinh/UI-Design-Course/blob/main/my-train-app/HuongDanSuDung.md) và [tiếng Anh](https://github.com/teddythinh/UI-Design-Course/blob/main/my-train-app/README.md).
@@ -78,9 +85,8 @@ Có hai cách chạy app mà nhóm sử dụng:
 
 ### Cách 2. Sử dụng các máy ảo Android hoặc iOS
 
-Theo dõi [React Native doc](https://reactnative.dev/docs/environment-setup) để xem chi tiết cài đặt.
-
-Theo dõi [Android Studio Emulator doc](https://docs.expo.dev/workflow/android-studio-emulator/) và [iOS Simulator doc](https://docs.expo.dev/workflow/ios-simulator/) để xem chi tiết cài đặt.
+> Theo dõi [React Native doc](https://reactnative.dev/docs/environment-setup) để xem chi tiết cài đặt.
+> Theo dõi [Android Studio Emulator doc](https://docs.expo.dev/workflow/android-studio-emulator/) và [iOS Simulator doc](https://docs.expo.dev/workflow/ios-simulator/) để xem chi tiết cài đặt.
 
 Vì project này sử dụng MacOS, nhóm sẽ hướng dẫn cài đặt trên máy ảo iOS.
 
