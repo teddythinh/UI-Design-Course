@@ -18,7 +18,12 @@
 - Xcode 14.3.1 (14E300c)
 - gitmoji-cli 8.4.0
 
-## Techstack
+## Prerequisite
+
+- NodeJS latest version or above 16.
+- Homebrew if using MacOS.
+
+## Tech stacks
 
 - [React Native](https://reactnative.dev/): A library for building native apps using React
 - [Expo](https://expo.dev/): A framework and a platform for universal React applications
@@ -34,11 +39,25 @@
 
 ## Installation
 
+We clone the repo using:
+
+```bash
+git clone https://github.com/teddythinh/UI-Design-Course.git
+```
+
+After that, we change directory to this folder:
+
+```bash
+cd my-train-app
+```
+
+We install every packages using:
+
 ```bash
 npm install
 ```
 
-or
+or if you using yarn:
 
 ```bash
 yarn install
