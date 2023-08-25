@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Card, Button, Text } from "@ui-kitten/components";
 import { StyleSheet, View, ScrollView, FlatList } from "react-native";
-import { Image, FAB, AirbnbRating } from "@rneui/themed";
+import { Image, AirbnbRating } from "@rneui/themed";
 import dayjs from "dayjs";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { FAB } from "react-native-paper";
 
 import history from "../assets/history";
 
@@ -34,7 +35,7 @@ const HistorySubScreen: React.FC<Props> = ({
               <Card style={styles.card}>
                 <Image
                   source={{ uri: item.img }}
-                  style={{ width: 315, height: 200, borderRadius: 10 }}
+                  style={{ width: 330, height: 200, borderRadius: 10 }}
                 />
                 <Text category="h6" style={{ marginTop: 10 }}>
                   {item.title}
@@ -67,14 +68,12 @@ const HistorySubScreen: React.FC<Props> = ({
         </View>
       </ScrollView>
       <FAB
-        color={"#47EAE0"}
-        style={{ position: "absolute", bottom: 20, right: 20 }}
+        style={styles.fab}
+        icon="plus"
         onPress={() => {
           navigation.navigate("TripBookingAdd");
         }}
-      >
-        <Icon name="plus" size={28} color="black" />
-      </FAB>
+      />
     </>
   );
 };
@@ -89,6 +88,12 @@ const styles = StyleSheet.create({
   },
   footerControl: {
     marginHorizontal: 3,
+  },
+  fab: {
+    position: "absolute",
+    margin: 16,
+    right: 0,
+    bottom: 0,
   },
 });
 

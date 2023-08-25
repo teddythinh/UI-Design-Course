@@ -4,6 +4,9 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Text, Input, Button } from "@ui-kitten/components";
+import { FAB } from "react-native-paper";
+
+import MyFAB from "../components/MyFAB";
 import TodoList from "../components/TodoList";
 
 type Props = {
@@ -27,11 +30,18 @@ const TripBookingAddScreen: React.FC<Props> = ({ navigation }) => {
             <FontAwesomeIcon icon={faChevronLeft} size={25} />
           </Pressable>
         </View>
-        <Text category="h5" style={{textAlign: "right", margin: 20}}>Tham quan Đà Nẵng</Text>
+        <Text category="h5" style={{ textAlign: "right", margin: 20 }}>
+          Tham quan Đà Nẵng
+        </Text>
         <View style={styles.todolist}>
-        <TodoList/>
+          <TodoList />
         </View>
       </View>
+      <FAB
+        style={styles.fab}
+        icon="plus"
+        onPress={() => console.log("Pressed")}
+      />
     </>
   );
 };
@@ -39,6 +49,12 @@ const TripBookingAddScreen: React.FC<Props> = ({ navigation }) => {
 const styles = StyleSheet.create({
   todolist: {
     margin: 20,
+  },
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
   }
 });
 
