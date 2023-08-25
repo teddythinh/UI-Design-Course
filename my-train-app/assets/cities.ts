@@ -13,7 +13,7 @@ const cities: City[] = [
     imgUrl:
       "https://booking.muongthanh.com/upload_images/images/2022/06/du-lich-ho-hoan-kiem-gan-ha-noi.jpg",
     introduction:
-      "Hà Nội là thủ đô của Việt Nam, là một thành phố có lịch sử lâu đời và văn hóa phong phú. Thành phố nằm ở đồng bằng sông Hồng, cách biển Đông khoảng 100 km về phía bắc. Hà Nội có diện tích 3.324,92 km² và dân số khoảng 8,6 triệu người. Hà Nội là một thành phố có nhiều di tích lịch sử và văn hóa nổi tiếng, như: Văn Miếu - Quốc Tử Giám, Hoàng thành Thăng Long, Hồ Hoàn Kiếm, Lăng Chủ tịch Hồ Chí Minh,... Thành phố cũng có nhiều công trình kiến trúc hiện đại, như: Nhà hát Lớn Hà Nội, Trung tâm Hội nghị Quốc gia,... Hà Nội là một thành phố năng động và hiện đại, là trung tâm kinh tế, văn hóa, giáo dục, khoa học của Việt Nam. Thành phố cũng là một điểm đến du lịch hấp dẫn với nhiều danh lam thắng cảnh và di tích lịch sử.",
+      "Hà Nội là thủ đô của Việt Nam, là một thành phố có lịch sử lâu đời và văn hóa phong phú. Thành phố nằm ở đồng bằng sông Hồng, cách biển Đông khoảng 100 km về phía bắc. Hà Nội có diện tích 3.324,92 km² và dân số khoảng 8,6 triệu người. Hà Nội là một thành phố năng động và hiện đại, là trung tâm kinh tế, văn hóa, giáo dục, khoa học của Việt Nam.",
     prices: "Giá vé máy bay khứ hồi từ TP.HCM: 2.000.000đ - 3.000.000đ",
   },
   {
