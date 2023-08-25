@@ -5,8 +5,6 @@ import { Input, Text, Button } from "@ui-kitten/components";
 import { Divider } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faTrash, faPenToSquare, faPlus, faPen } from "@fortawesome/free-solid-svg-icons";
-// create a todo list that can add, delete, edit, and mark as done
-// use a flatlist to display the todo list
 
 const TodoList = () => {
   const [todo, setTodo] = useState("");
