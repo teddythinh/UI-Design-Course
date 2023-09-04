@@ -18,6 +18,7 @@ import AutocompleteTrainStation from "../components/AutoCompleteTrainStation";
 import DepartureDatepicker from "../components/DepartureDatePicker";
 import ArrivalDatepicker from "../components/ArrivalDatePicker";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import PersonCounter from "../components/PersonCounter";
 
 interface BookingScreenProps {
   navigation: any;
@@ -25,7 +26,8 @@ interface BookingScreenProps {
 
 const data = [
   "Người lớn",
-  "Trẻ em (1-10 tuổi)",
+  "Trẻ em (1-6 tuổi)",
+  "Trẻ em (6-10 tuổi)",
   "Sinh viên",
   "Người cao tuổi (từ 60 tuổi)",
 ];
@@ -120,19 +122,69 @@ const TrainbookingScreen: React.FC<BookingScreenProps> = ({ navigation }) => {
 
         <View style={styles.selectedPassenger}>
           <Text category="h6">Hành khách</Text>
-          <Select
-            style={{ marginTop: 10 }}
-            placeholder=" "
-            value={displayValue}
-            multiSelect={true}
-            selectedIndex={selectedIndex}
-            onSelect={(index: IndexPath) => setSelectedIndex(index)}
+          <View
+            style={{
+              flexDirection: "row",
+              marginTop: 10,
+              justifyContent: "space-between",
+            }}
           >
-            {data.map(renderOption)}
-          </Select>
-        </View>
-        <View style={styles.button}>
+            <Text style={{ marginLeft: 20, marginTop: 20 }} category="s1">
+              Người lớn
+            </Text>
+            <PersonCounter />
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              marginTop: 10,
+              justifyContent: "space-between",
+            }}
+          >
+            <Text style={{ marginLeft: 20, marginTop: 20 }} category="s1">
+              Trẻ em (1-6 tuổi)
+            </Text>
+            <PersonCounter />
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              marginTop: 10,
+              justifyContent: "space-between",
+            }}
+          >
+            <Text style={{ marginLeft: 20, marginTop: 20 }} category="s1">
+              Trẻ em (6-10 tuổi)
+            </Text>
+            <PersonCounter />
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              marginTop: 10,
+              justifyContent: "space-between",
+            }}
+          >
+            <Text style={{ marginLeft: 20, marginTop: 20 }} category="s1">
+              Sinh viên
+            </Text>
+            <PersonCounter />
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              marginTop: 10,
+              justifyContent: "space-between",
+            }}
+          >
+            <Text style={{ marginLeft: 20, marginTop: 20 }} category="s1">
+              Người cao tuổi (từ 60 tuổi)
+            </Text>
+            <PersonCounter />
+          </View>
           <Button
+            style={styles.button}
             accessoryLeft={searchIcon}
             onPress={() => navigation.navigate("TrainBookingSeat")}
           >
@@ -150,7 +202,9 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   arrivalStation: {
-    margin: 20,
+    marginTop: 20,
+    marginLeft: 20,
+    marginBottom: 20,
   },
   datepicker: {
     margin: 20,
@@ -162,11 +216,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   button: {
-    marginLeft: 20,
-    marginRight: 20,
     marginTop: 10,
-    flex: 1,
-    justifyContent: "flex-end",
   },
 });
 
