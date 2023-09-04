@@ -78,7 +78,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
             category="h6"
             style={{ margin: 5, fontSize: 25, color: "orange" }}
           >
-            {date.format("HH:mm:ss")}
+            {date.format("HH:mm")}
           </Text>
           <AutocompleteCities />
           <Text category="h6" style={{ margin: 10 }}>
