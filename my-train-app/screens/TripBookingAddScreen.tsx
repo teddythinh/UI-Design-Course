@@ -37,11 +37,7 @@ const TripBookingAddScreen: React.FC<Props> = ({ navigation }) => {
           <TodoList />
         </View>
       </View>
-      <FAB
-        style={styles.fab}
-        icon="plus"
-        onPress={() => console.log("Pressed")}
-      />
+      <MyFAB />
     </>
   );
 };
