@@ -52,7 +52,7 @@ export const AutocompleteTrainStation = (): React.ReactElement => {
 
 const styles = StyleSheet.create({
     inputText: {
-        width: 330,
+        width: 350,
         marginTop: 10,
     },
 });
