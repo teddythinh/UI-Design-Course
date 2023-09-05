@@ -66,8 +66,8 @@ const PaymentMethodScreen: React.FC<Props> = ({ navigation }) => {
 const styles = StyleSheet.create({
   title: {
     justifyContent: "center",
-    marginTop: 20,
-    marginLeft: 20,
+    alignItems: "center",
+    marginTop: 100,
   },
 });
 
