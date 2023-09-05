@@ -9,9 +9,6 @@ import {
 } from "@ui-kitten/components";
 import dayjs from "dayjs";
 import moment from "moment";
-import { MomentDateService } from "@ui-kitten/moment";
-
-const dateService = new MomentDateService();
 
 const CalendarIcon = (props): IconElement => (
   <Icon {...props} name="calendar" />

@@ -1,17 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import {
-  Datepicker,
+  Layout,
+  RangeDatepicker,
   Icon,
   IconElement,
-  Layout,
   DatepickerProps,
 } from "@ui-kitten/components";
 import dayjs from "dayjs";
 import moment from "moment";
-import { MomentDateService } from "@ui-kitten/moment";
-
-const dateService = new MomentDateService();
 
 const CalendarIcon = (props): IconElement => (
   <Icon {...props} name="calendar" />
@@ -24,21 +21,22 @@ const useDatepickerState = (initialDate = null): DatepickerProps => {
 
 const now = dayjs();
 
-export const ArrivalDatepicker = (): React.ReactElement => {
-  const [date, setDate] = React.useState(moment());
+const DateRangeDatePicker: React.FC = () => {
+  const [range, setRange] = useState({});
   const boundingPickerState = useDatepickerState();
   const minPickerState = useDatepickerState();
+
   return (
     <Layout style={styles.container} level="1">
-      <Datepicker
-        placeholder="Chọn ngày"
-        date={date}
-        onSelect={(nextDate: moment.Moment) => setDate(nextDate)}
+      <RangeDatepicker
+        range={range}
+        placeholder={"Chọn ngày"}
         accessoryRight={CalendarIcon}
         boundingMonth={false}
         {...boundingPickerState}
         min={now.toDate()}
         {...minPickerState}
+        onSelect={(nextRange) => setRange(nextRange)}
       />
     </Layout>
   );
@@ -54,4 +52,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ArrivalDatepicker;
+export default DateRangeDatePicker;
+

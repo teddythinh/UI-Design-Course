@@ -16,39 +16,21 @@ import {
 
 import AutocompleteTrainStation from "../components/AutoCompleteTrainStation";
 import DepartureDatepicker from "../components/DepartureDatePicker";
-import ArrivalDatepicker from "../components/ArrivalDatePicker";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import PersonCounter from "../components/PersonCounter";
+import DateRangeDatePicker from "../components/DateRangeDatePicker";
 
 interface BookingScreenProps {
   navigation: any;
 }
-
-const data = [
-  "Người lớn",
-  "Trẻ em (1-6 tuổi)",
-  "Trẻ em (6-10 tuổi)",
-  "Sinh viên",
-  "Người cao tuổi (từ 60 tuổi)",
-];
 
 const searchIcon = (props): IconElement => (
   <Icon {...props} name="search-outline" />
 );
 
 const TrainbookingScreen: React.FC<BookingScreenProps> = ({ navigation }) => {
-  const [value, setValue] = useState("");
   const [checked, setChecked] = useState(false);
 
-  const [selectedIndex, setSelectedIndex] = useState<IndexPath>(
-    new IndexPath(0)
-  );
-  const displayValue = data[selectedIndex.row];
-  const renderOption = (title): React.ReactElement => (
-    <SelectItem title={title} />
-  );
-
-  const [press, setPress] = useState(false);
   const insets = useSafeAreaInsets();
 
   return (
@@ -103,18 +85,14 @@ const TrainbookingScreen: React.FC<BookingScreenProps> = ({ navigation }) => {
         {checked ? (
           <View>
             <Text style={{ marginLeft: 20 }} category="h6">
-              Ngày đi
+              Chọn ngày
             </Text>
-            <DepartureDatepicker />
-            <Text style={{ marginLeft: 20 }} category="h6">
-              Ngày về
-            </Text>
-            <ArrivalDatepicker />
+            <DateRangeDatePicker />
           </View>
         ) : (
           <View>
             <Text style={{ marginLeft: 20 }} category="h6">
-              Ngày đi
+              Chọn ngày
             </Text>
             <DepartureDatepicker />
           </View>
@@ -125,11 +103,11 @@ const TrainbookingScreen: React.FC<BookingScreenProps> = ({ navigation }) => {
           <View
             style={{
               flexDirection: "row",
-              marginTop: 10,
               justifyContent: "space-between",
+              marginTop: 10,
             }}
           >
-            <Text style={{ marginLeft: 20, marginTop: 20 }} category="s1">
+            <Text style={{ marginTop: 20 }} category="s1">
               Người lớn
             </Text>
             <PersonCounter />
@@ -137,11 +115,11 @@ const TrainbookingScreen: React.FC<BookingScreenProps> = ({ navigation }) => {
           <View
             style={{
               flexDirection: "row",
-              marginTop: 10,
               justifyContent: "space-between",
+              marginTop: 10,
             }}
           >
-            <Text style={{ marginLeft: 20, marginTop: 20 }} category="s1">
+            <Text style={{ marginTop: 20 }} category="s1">
               Trẻ em (1-6 tuổi)
             </Text>
             <PersonCounter />
@@ -149,11 +127,11 @@ const TrainbookingScreen: React.FC<BookingScreenProps> = ({ navigation }) => {
           <View
             style={{
               flexDirection: "row",
-              marginTop: 10,
               justifyContent: "space-between",
+              marginTop: 10,
             }}
           >
-            <Text style={{ marginLeft: 20, marginTop: 20 }} category="s1">
+            <Text style={{ marginTop: 20 }} category="s1">
               Trẻ em (6-10 tuổi)
             </Text>
             <PersonCounter />
@@ -161,11 +139,11 @@ const TrainbookingScreen: React.FC<BookingScreenProps> = ({ navigation }) => {
           <View
             style={{
               flexDirection: "row",
-              marginTop: 10,
               justifyContent: "space-between",
+              marginTop: 10,
             }}
           >
-            <Text style={{ marginLeft: 20, marginTop: 20 }} category="s1">
+            <Text style={{ marginTop: 20 }} category="s1">
               Sinh viên
             </Text>
             <PersonCounter />
@@ -174,11 +152,11 @@ const TrainbookingScreen: React.FC<BookingScreenProps> = ({ navigation }) => {
           <View
             style={{
               flexDirection: "row",
-              marginTop: 10,
               justifyContent: "space-between",
+              marginTop: 10,
             }}
           >
-            <Text style={{ marginLeft: 20, marginTop: 20 }} category="s1">
+            <Text style={{ marginTop: 20 }} category="s1">
               Người cao tuổi (từ 60 tuổi)
             </Text>
             <PersonCounter />
@@ -216,7 +194,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   button: {
-    marginTop: 10,
+    marginTop: 40,
   },
 });
 
