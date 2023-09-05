@@ -8,6 +8,7 @@ import TrainBookingInformationScreen from "../screens/TrainBookingInformationScr
 import PaymentMethodScreen from "../screens/PaymentMethodScreen";
 import PaymentInformationScreen from "../screens/PaymentInformationScreen";
 import PaymentConfirmScreen from "../screens/PaymentConfirmScreen";
+import PaymentQRMethodScreen from "../screens/PaymentQRMethodScreen";
 import PaymentSuccessScreen from "../screens/PaymentSuccessScreen";
 import TripBookingAddScreen from "../screens/TripBookingAddScreen";
 import TripBookingCityListScreen from "../screens/TripBookingCityListScreen";
@@ -29,6 +30,7 @@ const MainNavigator: React.FC = () => {
         <Stack.Screen name="PaymentMethod" component={PaymentMethodScreen} options={{ headerShown: false}} />
         <Stack.Screen name="PaymentInformation" component={PaymentInformationScreen} options={{ headerShown: false}} />
         <Stack.Screen name="PaymentConfirm" component={PaymentConfirmScreen} options={{ headerShown: false}} />
+        <Stack.Screen name="PaymentQRMethod" component={PaymentQRMethodScreen} options={{ headerShown: false}} />
         <Stack.Screen name="PaymentSuccess" component={PaymentSuccessScreen} options={{ headerShown: false}} />
         <Stack.Screen name="TripBookingAdd" component={TripBookingAddScreen} options={{ headerShown: false}} />
         <Stack.Screen name="TripBookingCityList" component={TripBookingCityListScreen} options={{ headerShown: false}} />

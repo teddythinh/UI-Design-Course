@@ -89,7 +89,7 @@ const PaymentConfirmScreen: React.FC<Props> = ({ navigation }) => {
                 marginBottom: 20,
               }}
             >
-              <Text>Người gửi</Text>
+              <Text>Họ tên</Text>
               <Text>Nguyễn Văn A</Text>
             </View>
             <View
@@ -99,18 +99,8 @@ const PaymentConfirmScreen: React.FC<Props> = ({ navigation }) => {
                 marginBottom: 20,
               }}
             >
-              <Text>Số tài khoản</Text>
-              <Text>0123456789</Text>
-            </View>
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-                marginBottom: 20,
-              }}
-            >
-              <Text>Ngân hàng</Text>
-              <Text>Vietcombank</Text>
+              <Text>Hình thức thanh toán</Text>
+              <Text>VNPAY</Text>
             </View>
             <View
               style={{
@@ -129,11 +119,11 @@ const PaymentConfirmScreen: React.FC<Props> = ({ navigation }) => {
         </View>
         <Button
           style={{ margin: 30 }}
-          onPress={() => setVisible(true)}
+          onPress={() => navigation.navigate("PaymentQRMethod")}
         >
           Xác nhận
         </Button>
-        <Modal visible={visible}>
+        {/* <Modal visible={visible}>
           <Card disabled={true}>
             <Text
               category="h5"
@@ -170,7 +160,7 @@ const PaymentConfirmScreen: React.FC<Props> = ({ navigation }) => {
               Xác thực
             </Button>
           </Card>
-        </Modal>
+        </Modal> */}
       </View>
     </>
   );

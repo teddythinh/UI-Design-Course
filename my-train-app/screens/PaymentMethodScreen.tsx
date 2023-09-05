@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Text, Button, Icon, IconElement } from "@ui-kitten/components";
 import BankList from "../components/BankList";
+import PaymentMethodRadio from "../components/PaymentMethodRadio";
 // import EWalletList from "../components/EWalletList";
 
 const checkIcon = (props): IconElement => (
@@ -43,18 +44,19 @@ const PaymentMethodScreen: React.FC<Props> = ({ navigation }) => {
           <Text category="h5">Phương thức thanh toán</Text>
         </View>
         <View style={styles.title}>
-          <Text category="h4" style={{ color: "blue" }}>
+          {/* <Text category="h4" style={{ color: "blue" }}>
             Các ngân hàng
           </Text>
-          <BankList />
+          <BankList /> */}
+          <PaymentMethodRadio />
         </View>
         
         {/* <View style={styles.title}>
         <Text category="h4" style={{color: "blue"}}>Các ví điện tử</Text>
         </View>
         <EWalletList/> */}
-        <View style={{ height: 20, marginLeft: 20, marginRight: 20, marginTop: 100 }}>
-          <Button accessoryLeft={checkIcon} onPress={() => navigation.navigate("PaymentInformation")}>Xác nhận</Button>
+        <View style={{ height: 20, marginLeft: 20, marginRight: 20 }}>
+          <Button accessoryLeft={checkIcon} onPress={() => navigation.navigate("PaymentConfirm")}>Xác nhận</Button>
         </View>
       </View>
     </>
@@ -64,8 +66,8 @@ const PaymentMethodScreen: React.FC<Props> = ({ navigation }) => {
 const styles = StyleSheet.create({
   title: {
     justifyContent: "center",
-    alignItems: "center",
-    marginTop: 50
+    marginTop: 20,
+    marginLeft: 20,
   },
 });
 
