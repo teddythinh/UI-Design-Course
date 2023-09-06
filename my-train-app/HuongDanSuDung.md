@@ -47,7 +47,7 @@ Sau đó, ta thấy được giao diện để tương tác và các flow để 
 - NodeJS phiên bản mới nhất hoặc từ 16 trở lên.
 - Homebrew nếu xài MacOS.
 
-> **CHÚ Ý:** Vì thư viện Kitten UI bản mới nhất đang có xung đột với Expo SDK 49 nên bạn phải install các packages với cờ `--force` hoặc có thể hạ phiên bản Expo SDK xuống 48.
+> **CHÚ Ý:** Vì thư viện Kitten UI bản mới nhất đang có xung đột với Expo SDK 49 nên bạn phải install các packages với cờ `--force`. Chi tiết ở phần cài đặt.
 
 ## Cài đặt
 
@@ -66,14 +66,10 @@ cd my-train-app
 Ta cài đặt các packages qua lệnh:
 
 ```bash
-npm install
+npm install --force
 ```
 
-hoặc nếu sử dụng yarn
-
-```bash
-yarn install
-```
+> **LƯU Ý**: KHÔNG sử dụng Yarn để cài đặt packages vì sẽ không chạy được trên cả npm hoặc yarn.
 
 ## Sử dụng
 
@@ -82,18 +78,15 @@ Có hai cách chạy app mà nhóm sử dụng:
 ### Cách 1: Sử dụng ứng dụng Expo Go thông qua thiết bị thật **(Recommend)**
 
 1. Ta cần cài ứng dụng Expo Go thông qua Google Play Store trên thiết bị Android hoặc Appstore trên thiết bị iOS.
-2. Ta chạy lệnh:
-
-- `npm start` hoặc
-- `npx expo start`
-
+2. Ta chạy lệnh `npm start`
 3. Lúc này, trên terminal sẽ xuất hiện mã QR code, bạn cần quét mã thông qua ứng dụng Expo Go (Android) hoặc máy ảnh (iOS).
 4. Ứng dụng sẽ cài đặt và chạy.
 
 ### Cách 2. Sử dụng các máy ảo Android hoặc iOS
 
-> Theo dõi [React Native doc](https://reactnative.dev/docs/environment-setup) để xem chi tiết cài đặt.
-> Theo dõi [Android Studio Emulator doc](https://docs.expo.dev/workflow/android-studio-emulator/) và [iOS Simulator doc](https://docs.expo.dev/workflow/ios-simulator/) để xem chi tiết cài đặt.
+_Theo dõi [React Native doc](https://reactnative.dev/docs/environment-setup) để xem chi tiết cài đặt._
+
+_Theo dõi [Android Studio Emulator doc](https://docs.expo.dev/workflow/android-studio-emulator/) và [iOS Simulator doc](https://docs.expo.dev/workflow/ios-simulator/) để xem chi tiết cài đặt._
 
 Vì project này sử dụng MacOS, nhóm sẽ hướng dẫn cài đặt trên máy ảo iOS.
 
@@ -123,9 +116,5 @@ sudo gem install cocoapods
 
 > Lưu ý: Nếu CocoaPods yêu cầu cài đặt `activesupport` hoặc các package liên quan từ Gem, bạn cần dùng lệnh `sudo` trước lệnh `gem`.
 
-5. Ta chạy lệnh:
-
-- `npm start` hoặc
-- `npx expo start`
-
+5. Ta chạy lệnh `npm start`
 6. Bấm phím `i` để mở trình máy ảo iOS.

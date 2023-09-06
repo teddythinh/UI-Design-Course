@@ -16,7 +16,7 @@
 
 [Vietnamese](https://github.com/teddythinh/UI-Design-Course/blob/main/my-train-app/HuongDanSuDung.md)
 
-> **IMPORTANT NOTE:** Because the Kitten UI package is conflicting with the Expo SDK 49, you may install with `--force` flag. Or you can downgrade the Expo SDK to 48.
+> **IMPORTANT NOTE:** Because the Kitten UI package is conflicting with the Expo SDK 49, you may install with `--force` flag. More details in Installation section.
 
 ## My configuration
 
@@ -61,14 +61,10 @@ cd my-train-app
 We install every packages using:
 
 ```bash
-npm install
+npm install --force
 ```
 
-or if you using yarn:
-
-```bash
-yarn install
-```
+> **NOTE:** Please do not use Yarn package manager to install or it will break and cannot run on both npm and yarn.
 
 ## Usage
 
@@ -77,18 +73,15 @@ There are two ways to start the app that I use:
 ### 1. Using Expo Go
 
 - Install Expo Go on your device
-- Run
-  - `npx expo start` or
-  - `yarn start` or
-  - `npm start`
+- Run `npm start`
 - Scan the QR code with Expo Go (Android) or Camera (iOS)
 - Enjoy!
 
 ### 2. Using Android Emulator or iOS Simulator
 
-Refer to this [React Native doc](https://reactnative.dev/docs/environment-setup) for detailed installation.
+_Refer to this [React Native doc](https://reactnative.dev/docs/environment-setup) for detailed installation._
 
-Refer to this [Android Studio Emulator doc](https://docs.expo.dev/workflow/android-studio-emulator/) and [iOS Simulator doc](https://docs.expo.dev/workflow/ios-simulator/) for detailed installation.
+_Refer to this [Android Studio Emulator doc](https://docs.expo.dev/workflow/android-studio-emulator/) and [iOS Simulator doc](https://docs.expo.dev/workflow/ios-simulator/) for detailed installation._
 
 Because I use MacOS, I will only instruct how to run on iOS Simulator.
 
@@ -115,12 +108,6 @@ sudo gem install cocoapods
 
 > Note: If CocoaPods requires to install `activesupport` or any package of Gem, you must use `sudo` before `gem`.
 
-- Run
-  - `npx expo start` or
-  - `yarn start` or
-  - `npm start`
-
+- Run `npm start`
 - Press `i` to open iOS Simulator.
 - Enjoy!
-
-> Note: If you use VSCode like me, you can install Android iOS Emulator extension to quick start the emulator.
