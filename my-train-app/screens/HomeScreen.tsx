@@ -16,12 +16,25 @@ import "dayjs/locale/vi";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import * as Localization from "expo-localization";
 import { I18n } from "i18n-js";
+import updateLocale from "dayjs/plugin/updateLocale";
 
 import cities from "../assets/cities";
 import { supportedLanguage } from "../i18n/supportedLanguage";
 
 dayjs.extend(isLeapYear);
 dayjs.locale("vi");
+dayjs.extend(updateLocale);
+dayjs.updateLocale("vi", {
+  weekdays: [
+    "Chủ nhật",
+    "Thứ hai",
+    "Thứ ba",
+    "Thứ tư",
+    "Thứ năm",
+    "Thứ sáu",
+    "Thứ bảy",
+  ],
+});
 
 const i18n = new I18n(supportedLanguage);
 i18n.locale = Localization.locale;
