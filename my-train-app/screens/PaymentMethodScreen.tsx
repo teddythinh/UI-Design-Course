@@ -55,7 +55,7 @@ const PaymentMethodScreen: React.FC<Props> = ({ navigation }) => {
         <Text category="h4" style={{color: "blue"}}>Các ví điện tử</Text>
         </View>
         <EWalletList/> */}
-        <View style={{ height: 20, marginLeft: 20, marginRight: 20 }}>
+        <View style={styles.button}>
           <Button accessoryLeft={checkIcon} onPress={() => navigation.navigate("PaymentConfirm")}>Xác nhận</Button>
         </View>
       </View>
@@ -68,6 +68,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: 100,
+  },
+  button: {
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 200,
   },
 });
 
